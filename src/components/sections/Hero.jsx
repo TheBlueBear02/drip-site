@@ -8,6 +8,8 @@ const TYPING_MS_PER_CHAR = 70;
 const SENTENCE_BREAK_MS = 1000;
 const CURSOR_BLINK_MS = 530;
 const FIRST_SENTENCE_END = HERO_HEADLINE.indexOf('.') + 1;
+const ACCENT_START = 31;   // start of "Look Good"
+const ACCENT_END = 41;     // end of "Look Good" (exclusive; period is at 40)
 
 function Hero() {
   const { activeSkill, previewSkill } = useSkillContext();
@@ -45,7 +47,13 @@ function Hero() {
     <>
       <p className="hero-eyebrow">CURE THE "DEFAULT UI" LOOK</p>
       <h1 className="hero-headline">
-        {HERO_HEADLINE.slice(0, headlineVisibleLength)}
+        {HERO_HEADLINE.slice(0, Math.min(headlineVisibleLength, ACCENT_START))}
+        {headlineVisibleLength > ACCENT_START && (
+          <span className="hero-headline-accent">
+            {HERO_HEADLINE.slice(ACCENT_START, Math.min(headlineVisibleLength, ACCENT_END))}
+          </span>
+        )}
+        {headlineVisibleLength > ACCENT_END && HERO_HEADLINE.slice(ACCENT_END, headlineVisibleLength)}
         {!typingDone && <span className="hero-headline-cursor" aria-hidden="true">|</span>}
       </h1>
       <p className="hero-subheadline">

@@ -28,13 +28,13 @@ function SkillsPreview() {
               key={skill.id}
               className="skills-preview-card"
             >
-              <button
-                className={`skills-preview-card-btn ${activeSkill === skill.id ? 'skills-preview-card-btn-active' : ''}`}
-                onClick={() => handlePreviewClick(skill.id)}
-              >
-                {activeSkill === skill.id ? 'Active' : 'Preview'}
-              </button>
               <div className="skills-preview-card-preview">
+                <button
+                  className={`skills-preview-card-btn ${activeSkill === skill.id ? 'skills-preview-card-btn-active' : ''}`}
+                  onClick={() => handlePreviewClick(skill.id)}
+                >
+                  {activeSkill === skill.id ? 'Active' : 'Preview'}
+                </button>
                 <div
                   className="skills-preview-card-preview-bg"
                   style={{ backgroundColor: skill.bgColor }}

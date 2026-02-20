@@ -229,7 +229,7 @@ A skill switcher strip is visible — when the user picks a skill, everything tr
 
 ```
 Nav
-  └── Logo | How It Works | Skills | Platforms | GitHub stars counter (right) | "Browse Skills" CTA
+  └── Logo (GETDRIP + Beta tag) | How It Works | Skills | Platforms | GitHub stars counter (right) | "Browse Skills" CTA
 
 SkillSwitcherStrip   ← PERSISTENT across all pages
   └── Horizontal scrollable row of skill chips

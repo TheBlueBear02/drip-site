@@ -17,17 +17,48 @@
 }
 
 .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: color var(--site-duration-sm) var(--site-ease);
+}
+
+.nav-logo-text {
   font-size: 24px;
   font-weight: 700;
   color: var(--site-text);
-  text-decoration: none;
   letter-spacing: -0.5px;
   font-family: var(--site-font-head);
   transition: color var(--site-duration-sm) var(--site-ease);
 }
 
-.nav-logo:hover {
+.nav-logo:hover .nav-logo-text {
   color: var(--site-accent);
+}
+
+.nav-logo-beta {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: var(--site-font-body);
+  background-color: var(--site-accent);
+  color: var(--site-accent-fg);
+  border-radius: var(--site-radius-sm);
+  border: 1px solid var(--site-border-strong);
+  box-shadow: var(--site-shadow-sm);
+  transition: background-color var(--site-duration-sm) var(--site-ease),
+    border-color var(--site-duration-sm) var(--site-ease),
+    box-shadow var(--site-duration-sm) var(--site-ease);
+}
+
+.nav-logo:hover .nav-logo-beta {
+  background-color: var(--site-accent-2);
+  border-color: var(--site-accent);
+  box-shadow: var(--site-shadow-glow);
 }
 
 .nav-links {

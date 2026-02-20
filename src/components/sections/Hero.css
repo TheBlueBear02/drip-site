@@ -203,6 +203,11 @@
   font-family: var(--site-font-head);
 }
 
+.hero-headline-accent {
+  color: var(--site-accent);
+  transition: color var(--site-duration-sm) var(--site-ease);
+}
+
 .hero-headline-cursor {
   display: inline-block;
   animation: hero-cursor-blink 530ms step-end infinite;

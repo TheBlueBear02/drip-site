@@ -42,7 +42,7 @@ function FAQ() {
   return (
     <section id="faq" className={`qa qa--${resolvedSkillId}`}>
       <div className="container">
-        <h2 className="qa-title">Questions & Answers</h2>
+        <h2 className="qa-title">Common Questions</h2>
         <p className="qa-subtitle">
         </p>
         <div className="qa-list">

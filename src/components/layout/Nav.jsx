@@ -33,7 +33,10 @@ function Nav() {
       <div className="container">
         <div className="nav-content">
           <a href="#" onClick={handleScrollToTop} className="nav-logo" aria-label="Scroll to top">
-            <span className="brand-get">GET</span><span className="brand-drip">DRIP</span>
+            <span className="nav-logo-text">
+              <span className="brand-get">GET</span><span className="brand-drip">DRIP</span>
+            </span>
+            <span className="nav-logo-beta" aria-label="Beta">Beta</span>
           </a>
           <div className="nav-links">
             <a href="#how-it-works" onClick={(e) => handleScrollTo(e, 'how-it-works')} className="nav-link">
