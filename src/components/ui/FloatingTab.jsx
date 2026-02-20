@@ -4,10 +4,11 @@ import { skillMetas } from '../../skills';
 import './FloatingTab.css';
 
 function FloatingTab() {
-  const { activeSkill } = useSkillContext();
+  const { activeSkill, previewSkill } = useSkillContext();
   const [copied, setCopied] = useState(false);
+  const resolvedSkill = previewSkill ?? activeSkill ?? 'linear-modern';
 
-  const meta = activeSkill ? skillMetas[activeSkill] : skillMetas['linear-modern'];
+  const meta = skillMetas[resolvedSkill] ?? skillMetas['linear-modern'];
   const displayName = meta?.name ?? 'Linear Modern';
   const command = meta?.command ?? 'npx getdrip add linear-modern';
 
@@ -29,8 +30,12 @@ function FloatingTab() {
     }
   }, [command]);
 
+  const isClay = resolvedSkill === 'clay-premium';
   return (
-    <div className="floating-tab" aria-label="getDRIP — copy design command">
+    <div
+      className={`floating-tab ${isClay ? 'floating-tab--clay' : ''}`}
+      aria-label="getDRIP — copy design command"
+    >
       <span className="floating-tab-label">
         getDRIP<span className="floating-tab-sep">/</span>{displayName}
       </span>

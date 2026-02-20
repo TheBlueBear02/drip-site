@@ -15,6 +15,7 @@ function Hero() {
   const { activeSkill, previewSkill } = useSkillContext();
   const resolvedSkillId = previewSkill ?? activeSkill ?? 'linear-modern';
   const isPlayfulGeometric = resolvedSkillId === 'playful-geometric';
+  const isClayPremium = resolvedSkillId === 'clay-premium';
 
   const [headlineVisibleLength, setHeadlineVisibleLength] = useState(0);
   const [typingDone, setTypingDone] = useState(false);
@@ -41,7 +42,7 @@ function Hero() {
     return () => clearTimeout(t);
   }, [headlineVisibleLength]);
 
-  const defaultCommand = 'npx getdrip add [design-name]';
+  const defaultCommand = `npx getdrip add ${resolvedSkillId}`;
 
   const content = (
     <>
@@ -71,8 +72,16 @@ function Hero() {
   return (
     <section
       id="home"
-      className={`hero ${isPlayfulGeometric ? 'hero--playful-geometric' : ''}`}
+      className={`hero ${isPlayfulGeometric ? 'hero--playful-geometric' : ''} ${isClayPremium ? 'hero--clay-premium' : ''}`}
     >
+      {isClayPremium && (
+        <div className="hero-blobs" aria-hidden="true">
+          <div className="hero-blob hero-blob--1" />
+          <div className="hero-blob hero-blob--2" />
+          <div className="hero-blob hero-blob--3" />
+          <div className="hero-blob hero-blob--4" />
+        </div>
+      )}
       {isPlayfulGeometric && (
         <div className="hero-shapes" aria-hidden="true">
           <div className="hero-shape hero-shape--circle hero-shape--1" />
@@ -86,7 +95,7 @@ function Hero() {
         </div>
       )}
 
-      {!isPlayfulGeometric && <div className="hero-background" />}
+      {!isPlayfulGeometric && !isClayPremium && <div className="hero-background" />}
 
       <div className="container">
         {isPlayfulGeometric ? (

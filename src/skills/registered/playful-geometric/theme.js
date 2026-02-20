@@ -8,6 +8,7 @@ export const playfulGeometricTheme = {
     '--site-bg':             '#FFFDF5',   // Page background (warm cream — never pure white)
     '--site-surface':         '#FFFFFF',   // Card/panel surface (pure white contrasts against cream)
     '--site-surface-2':      '#F1F5F9',   // Elevated surface (muted for code blocks)
+    '--site-section-bg':     '#F5F0E8',   // How it works & FAQ — light warm grey
 
     // ── TEXT ────────────────────────────────────────────────────────────
     '--site-text':           '#1E293B',   // Primary body text (also used for borders and shadows)

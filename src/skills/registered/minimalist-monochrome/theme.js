@@ -8,6 +8,7 @@ export const minimalistMonochromeTheme = {
     '--site-bg':             '#FFFFFF',   // Main page background (pure white)
     '--site-surface':         '#FFFFFF',   // Card/panel surface (white)
     '--site-surface-2':      '#F5F5F5',   // Elevated surface (muted off-white)
+    '--site-section-bg':     '#F0F0F0',   // How it works & FAQ — light grey
 
     // ── TEXT ────────────────────────────────────────────────────────────
     '--site-text':           '#000000',   // Primary body text (black)
@@ -17,6 +18,7 @@ export const minimalistMonochromeTheme = {
     // ── HERO ────────────────────────────────────────────────────────────
     '--site-hero-bg':         '#FFFFFF',   // Hero section background (white - matches minimalist monochrome)
     '--site-hero-text':       '#000000',   // Hero headline text (black)
+    '--site-hero-headline-weight': '400',  // Lighter headline for editorial/minimal look
 
     // ── SKILLS SECTION ──────────────────────────────────────────────────
     '--site-skills-bg':       '#000000',   // Inverted block for contrast

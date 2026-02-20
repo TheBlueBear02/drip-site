@@ -182,6 +182,65 @@
   box-shadow: var(--site-shadow-lg);
 }
 
+/* ── Clay Premium only: floating blobs (use --site-hero-shape-* for colors) ── */
+.hero--clay-premium .hero-blobs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero--clay-premium .hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero--clay-premium .hero-blob {
+    animation: none !important;
+  }
+}
+
+.hero--clay-premium .hero-blob--1 {
+  width: 60vh;
+  height: 60vh;
+  top: -10%;
+  left: -10%;
+  background-color: var(--site-hero-shape-1);
+  animation: clay-float 8s ease-in-out infinite;
+}
+.hero--clay-premium .hero-blob--2 {
+  width: 60vh;
+  height: 60vh;
+  top: -10%;
+  right: -10%;
+  background-color: var(--site-hero-shape-2);
+  animation: clay-float-delayed 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.hero--clay-premium .hero-blob--3 {
+  width: 50vh;
+  height: 50vh;
+  top: 30%;
+  left: -5%;
+  background-color: var(--site-hero-shape-3);
+  animation: clay-float-slow 12s ease-in-out infinite;
+  animation-delay: 4s;
+}
+.hero--clay-premium .hero-blob--4 {
+  width: 40vh;
+  height: 40vh;
+  bottom: -5%;
+  right: 10%;
+  background-color: var(--site-hero-shape-4);
+  animation: clay-float-delayed 10s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
 .hero-eyebrow {
   font-size: 14px;
   font-weight: 600;
@@ -195,7 +254,7 @@
 
 .hero-headline {
   font-size: clamp(36px, 6vw, 64px);
-  font-weight: 800;
+  font-weight: var(--site-hero-headline-weight, 800);
   line-height: 1.1;
   margin-bottom: 24px;
   letter-spacing: -0.02em;

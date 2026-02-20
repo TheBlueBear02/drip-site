@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--site-surface);
+  background-color: var(--site-section-bg);
   border-top: 1px solid var(--site-border);
   padding: 48px 0;
 }

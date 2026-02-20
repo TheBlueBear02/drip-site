@@ -225,6 +225,19 @@ export const skillList = [
 
 Add your new skill's imports and entries in each section marked with `→ ADD NEW`.
 
+### Step 5 — Add to Featured Designs (home page)
+
+The **Featured Designs** section on the home page (`SkillsPreview`) shows a fixed number of skill cards. To include the new skill there:
+
+1. Open `src/components/sections/SkillsPreview.jsx`.
+2. Find the line that defines the featured list, e.g.:
+   ```js
+   const previewSkills = skillList.slice(0, 4);
+   ```
+3. Increase the slice end so the new skill is included (e.g. for a 5th skill use `skillList.slice(0, 5)`).
+
+The order of cards matches `skillList` in `src/skills/index.js`, so the new skill appears as the last featured card once the slice count is updated.
+
 ---
 
 ## VERIFICATION CHECKLIST

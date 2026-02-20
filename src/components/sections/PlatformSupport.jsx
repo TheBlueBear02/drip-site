@@ -34,7 +34,8 @@ function PlatformSupport({ lightBg: lightBgProp }) {
   const { activeSkill, previewSkill } = useSkillContext();
   const resolvedId = previewSkill ?? activeSkill ?? DEFAULT_SKILL;
   const meta = skillMetas[resolvedId];
-  const lightBg = lightBgProp ?? (meta?.category === 'light');
+  const lightBg =
+    lightBgProp ?? (meta?.category === 'light' || meta?.category === 'colorful');
 
   return (
     <section

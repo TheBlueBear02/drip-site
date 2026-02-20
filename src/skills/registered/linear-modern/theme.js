@@ -8,6 +8,7 @@ export const linearModernTheme = {
     '--site-bg':             '#050506',   // Primary page canvas (near-black, never pure black)
     '--site-surface':        'rgba(255,255,255,0.05)',   // Card/panel (glass surface)
     '--site-surface-2':      '#0a0a0c',   // Elevated surface
+    '--site-section-bg':     '#121214',   // How it works & FAQ — lighter dark grey
 
     // ── TEXT ────────────────────────────────────────────────────────────
     '--site-text':           '#EDEDEF',   // Primary text (bright but not pure white)

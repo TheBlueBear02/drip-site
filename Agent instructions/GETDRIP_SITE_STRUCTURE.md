@@ -172,7 +172,10 @@ getdrip-site/
 │   │   │   ├── minimalist-monochrome/
 │   │   │   │   ├── theme.js        ← Token overrides
 │   │   │   │   └── meta.js         ← Name, tags, description, components list
-│   │   │   └── playful-geometric/
+│   │   │   ├── playful-geometric/
+│   │   │   │   ├── theme.js
+│   │   │   │   └── meta.js
+│   │   │   └── clay-premium/
 │   │   │       ├── theme.js
 │   │   │       └── meta.js
 │   │
@@ -239,6 +242,7 @@ SkillSwitcherStrip   ← PERSISTENT across all pages
 Hero
   └── Default / other skills: simple layout — radial gradient background, no card, CopyCommand + "Browse Skills" (accent pill)
   └── Playful Geometric only (when that skill is active or previewed): geometric shapes + card + pill with hover lift
+  └── Clay Premium only (when that skill is active or previewed): 4 floating blurred blobs using --site-hero-shape-1..4, clay-float keyframes (respects prefers-reduced-motion)
   └── Eyebrow: "Design system skills for AI agents"
   └── Headline: one line, large, accent word styled
   └── Subheadline: 1-2 sentences
@@ -507,10 +511,10 @@ Push to `main` → auto-builds → deploys to `gh-pages` branch → live at
 
 When a new skill is added to the Drip library, adding it to the site is 2 files:
 
-1. **`src/skills/skill-name/theme.js`** — token map (CSS vars)
-2. **`src/skills/skill-name/meta.js`** — name, category, mood, components list, description
+1. **`src/skills/registered/[skill-name]/theme.js`** — token map (CSS vars)
+2. **`src/skills/registered/[skill-name]/meta.js`** — name, category, mood, components list, description
 
-Then import and register it in `src/skills/index.js`.
+Then import and register it in `src/skills/index.js`. Some skills (e.g. playful-geometric, clay-premium) have optional Hero variants: add a conditional in `Hero.jsx` and matching styles in `Hero.css` when the skill needs blobs, cards, or other layout-specific treatment.
 
 The skill card, the detail page, the switcher strip — all generated automatically.
 
