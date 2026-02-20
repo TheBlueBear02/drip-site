@@ -37,6 +37,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 200px;
+  height: 80px;
   transition: transform var(--site-duration-md) var(--site-ease);
 }
 
@@ -50,6 +53,40 @@
   object-fit: contain;
 }
 
+/* Stack both logo variants in the same spot; one visible at a time */
+.platform-support-logo {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+/* Default (dark bg): show dark-mode logos, hide black logos */
+.platform-support-logo--light-bg {
+  display: none;
+}
+
+/* Light bg section: show black logos, hide dark-mode logos */
+.platform-support--light {
+  background-color: var(--platform-support-light-bg, #f5f5f5);
+}
+
+.platform-support--light .platform-support-title,
+.platform-support--light .platform-support-subtitle {
+  color: var(--platform-support-light-text, #1a1a1a);
+}
+
+.platform-support--light .platform-support-subtitle {
+  color: var(--platform-support-light-text-muted, #555);
+}
+
+.platform-support--light .platform-support-logo--dark-bg {
+  display: none;
+}
+
+.platform-support--light .platform-support-logo--light-bg {
+  display: block;
+}
+
 @media (max-width: 768px) {
   .platform-support {
     padding: 80px 0;
@@ -58,6 +95,11 @@
   .platform-support-strip {
     gap: 24px;
     padding: 32px 0;
+  }
+  
+  .platform-support-item {
+    width: 100px;
+    height: 50px;
   }
   
   .platform-support-logo {

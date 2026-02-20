@@ -3,18 +3,18 @@ import './HowItWorks.css';
 const steps = [
   {
     number: 1,
-    title: 'Browse the skill library',
-    description: 'Explore our collection of design skills. Each skill transforms your AI agent\'s UI with a unique aesthetic.',
+    title: 'Pick your vibe',
+    description: 'Browse the library and find the aesthetic vibe your app needs. No CSS knowledge required.',
   },
   {
     number: 2,
-    title: 'Copy the npx command',
-    description: 'One click copies the exact command you need. No account required, no signup forms.',
+    title: 'Copy one line',
+    description: 'Grab the simple npx command. No signups, no API keys, no configuration BS.',
   },
   {
     number: 3,
-    title: 'Paste in your agent\'s chat',
-    description: 'Run the command in your project. Your agent transforms your UI instantly.',
+    title: 'Paste in your project',
+    description: 'Run the command in your project and follow the 1 prompt instructions. Your agent transforms your UI instantly.',
   }
 ];
 
