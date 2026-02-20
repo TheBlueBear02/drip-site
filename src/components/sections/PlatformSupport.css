@@ -1,0 +1,105 @@
+.platform-support {
+  padding: 100px 0;
+  background-color: var(--site-bg);
+}
+
+.platform-support-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+  color: var(--site-text);
+  font-family: var(--site-font-head);
+}
+
+.platform-support-subtitle {
+  text-align: center;
+  color: var(--site-text-muted);
+  font-size: 18px;
+  margin-bottom: 64px;
+  font-family: var(--site-font-body);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.platform-support-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 40px 0;
+}
+
+.platform-support-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 32px;
+  background-color: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius-lg);
+  transition: all var(--site-duration-md) var(--site-ease);
+  min-width: 120px;
+}
+
+.platform-support-item:hover {
+  border-color: var(--site-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--site-shadow-md);
+}
+
+.platform-support-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: var(--site-text);
+  transition: color var(--site-duration-md) var(--site-ease);
+}
+
+.platform-support-item:hover .platform-support-icon {
+  color: var(--site-accent);
+}
+
+.platform-support-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--site-text);
+  font-family: var(--site-font-body);
+  text-align: center;
+  transition: color var(--site-duration-md) var(--site-ease);
+}
+
+.platform-support-item:hover .platform-support-name {
+  color: var(--site-accent);
+}
+
+@media (max-width: 768px) {
+  .platform-support {
+    padding: 80px 0;
+  }
+  
+  .platform-support-strip {
+    gap: 20px;
+    padding: 32px 0;
+  }
+  
+  .platform-support-item {
+    padding: 20px 24px;
+    min-width: 100px;
+  }
+  
+  .platform-support-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .platform-support-name {
+    font-size: 14px;
+  }
+}

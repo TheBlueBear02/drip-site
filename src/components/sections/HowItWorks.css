@@ -1,0 +1,66 @@
+.how-it-works {
+  padding: 100px 0;
+  background-color: var(--site-surface);
+}
+
+.how-it-works-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 64px;
+  letter-spacing: -1px;
+  color: var(--site-text);
+  font-family: var(--site-font-head);
+}
+
+.how-it-works-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px;
+}
+
+.how-it-works-step {
+  text-align: center;
+}
+
+.how-it-works-step-number {
+  width: 60px;
+  height: 60px;
+  background-color: var(--site-accent);
+  color: var(--site-accent-fg);
+  border-radius: var(--site-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 auto 24px;
+  font-family: var(--site-font-head);
+  box-shadow: var(--site-shadow-md);
+}
+
+.how-it-works-step-title {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: var(--site-text);
+  font-family: var(--site-font-head);
+  font-weight: 600;
+}
+
+.how-it-works-step-description {
+  color: var(--site-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: var(--site-font-body);
+}
+
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 80px 0;
+  }
+  
+  .how-it-works-steps {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

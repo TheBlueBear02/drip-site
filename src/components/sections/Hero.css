@@ -1,0 +1,307 @@
+/* Hero — Base layout; playful geometric variant scoped to .hero--playful-geometric */
+
+.hero {
+  position: relative;
+  padding: 100px 0 140px;
+  text-align: center;
+  overflow: hidden;
+  background-color: var(--site-hero-bg);
+}
+
+/* Default hero: subtle radial gradient (no shapes) */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    var(--site-accent) 0%,
+    transparent 70%
+  );
+  opacity: 0.1;
+  pointer-events: none;
+  transition: opacity var(--site-duration-md) var(--site-ease);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Playful geometric only: shapes + card ──────────────────────────────── */
+.hero--playful-geometric .hero-content {
+  max-width: none;
+}
+
+.hero--playful-geometric .hero-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero--playful-geometric .hero-shape {
+  position: absolute;
+  background-color: var(--site-hero-shape-1, var(--site-accent));
+  animation: hero-float 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero--playful-geometric .hero-shape {
+    animation: none;
+  }
+}
+
+.hero--playful-geometric .hero-shape--circle {
+  border-radius: 50%;
+}
+
+.hero--playful-geometric .hero-shape--triangle {
+  width: 0;
+  height: 0;
+  background: none !important;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 32px solid var(--site-hero-shape-2, var(--site-accent));
+}
+
+.hero--playful-geometric .hero-shape--dot {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+}
+
+.hero--playful-geometric .hero-shape--1 {
+  top: 12%;
+  left: 8%;
+  width: 80px;
+  height: 80px;
+  background-color: var(--site-hero-shape-1, var(--site-accent));
+  opacity: 0.35;
+  animation-delay: 0s;
+  animation-duration: 4s;
+}
+
+.hero--playful-geometric .hero-shape--2 {
+  top: 25%;
+  right: 12%;
+  width: 56px;
+  height: 56px;
+  background-color: var(--site-hero-shape-2, var(--site-accent-2));
+  opacity: 0.4;
+  animation-delay: 0.8s;
+  animation-duration: 5s;
+}
+
+.hero--playful-geometric .hero-shape--3 {
+  bottom: 20%;
+  left: 15%;
+  width: 40px;
+  height: 40px;
+  background-color: var(--site-hero-shape-3, var(--site-accent));
+  opacity: 0.45;
+  animation-delay: 1.6s;
+  animation-duration: 4.2s;
+}
+
+.hero--playful-geometric .hero-shape--4 {
+  top: 18%;
+  right: 22%;
+  border-bottom-color: var(--site-hero-shape-2, var(--site-accent));
+  transform: scale(1.2);
+  opacity: 0.35;
+  animation-delay: 0.4s;
+  animation-duration: 5.5s;
+}
+
+.hero--playful-geometric .hero-shape--5 {
+  bottom: 25%;
+  right: 10%;
+  border-bottom-color: var(--site-hero-shape-3, var(--site-accent-2));
+  transform: scale(0.9) rotate(25deg);
+  opacity: 0.4;
+  animation-delay: 1.2s;
+  animation-duration: 4.8s;
+}
+
+.hero--playful-geometric .hero-shape--6 {
+  top: 40%;
+  left: 6%;
+  background-color: var(--site-hero-shape-4, var(--site-accent-2));
+  opacity: 0.6;
+  animation-delay: 0.2s;
+  animation-duration: 3.5s;
+}
+
+.hero--playful-geometric .hero-shape--7 {
+  top: 60%;
+  right: 8%;
+  background-color: var(--site-hero-shape-1, var(--site-accent));
+  opacity: 0.5;
+  animation-delay: 1s;
+  animation-duration: 4s;
+}
+
+.hero--playful-geometric .hero-shape--8 {
+  bottom: 35%;
+  left: 25%;
+  background-color: var(--site-hero-shape-2, var(--site-accent));
+  opacity: 0.55;
+  animation-delay: 1.4s;
+  animation-duration: 4.5s;
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Playful geometric only: content card */
+.hero--playful-geometric .hero-card {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 40px 56px;
+  background-color: var(--site-surface);
+  border: 2px solid var(--site-border-strong);
+  border-radius: var(--site-radius-md);
+  box-shadow: var(--site-shadow-md);
+  transition:
+    transform var(--site-duration-sm) var(--site-ease),
+    box-shadow var(--site-duration-sm) var(--site-ease);
+}
+
+.hero--playful-geometric .hero-card:hover {
+  box-shadow: var(--site-shadow-lg);
+}
+
+.hero-eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--site-hero-text, var(--site-text-muted));
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  font-family: var(--site-font-body);
+}
+
+.hero-headline {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  color: var(--site-hero-text);
+  font-family: var(--site-font-head);
+}
+
+.hero-accent {
+  color: var(--site-hero-text, var(--site-accent));
+}
+
+.hero-subheadline {
+  font-size: clamp(17px, 2.2vw, 22px);
+  color: var(--site-hero-text, var(--site-text-muted));
+  opacity: 0.9;
+  margin-bottom: 36px;
+  line-height: 1.6;
+  font-family: var(--site-font-body);
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-command {
+  display: flex;
+  justify-content: center;
+}
+
+/* Browse Skills: base button styles */
+.hero-button {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--site-radius-full);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: var(--site-font-body);
+  transition:
+    transform var(--site-duration-sm) var(--site-ease),
+    box-shadow var(--site-duration-sm) var(--site-ease),
+    background-color var(--site-duration-sm) var(--site-ease),
+    color var(--site-duration-sm) var(--site-ease),
+    border-color var(--site-duration-sm) var(--site-ease);
+  cursor: pointer;
+}
+
+/* Default/simple style for other skills */
+.hero-button--simple {
+  background-color: var(--site-accent);
+  color: var(--site-accent-fg);
+  border: 2px solid transparent;
+  box-shadow: var(--site-shadow-md);
+}
+
+.hero-button--simple:hover {
+  background-color: var(--site-accent-2);
+  transform: translateY(-2px);
+  box-shadow: var(--site-shadow-lg);
+}
+
+/* Playful geometric only: pill + hover lift */
+.hero-button--secondary {
+  background-color: transparent;
+  color: var(--site-hero-text, var(--site-text));
+  border: 2px solid var(--site-border-strong);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.hero-button--secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--site-shadow-md);
+  background-color: var(--site-surface-2);
+  color: var(--site-hero-text, var(--site-text));
+}
+
+.hero-button--secondary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px var(--site-border-strong);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 72px 0 100px;
+  }
+
+  .hero--playful-geometric .hero-card {
+    padding: 32px 24px 40px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero-command {
+    width: 100%;
+  }
+
+  .hero-button,
+  .hero-button--simple,
+  .hero-button--secondary {
+    width: 100%;
+    text-align: center;
+  }
+}

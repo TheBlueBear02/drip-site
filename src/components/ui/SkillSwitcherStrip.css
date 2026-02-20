@@ -1,0 +1,70 @@
+.skill-switcher-strip {
+  z-index: 40;
+  background-color: var(--site-surface);
+  border-bottom: 1px solid var(--site-border);
+  padding: 12px 0;
+}
+
+
+.skill-switcher-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--site-border) transparent;
+  padding-bottom: 4px;
+}
+
+.skill-switcher-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.skill-switcher-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.skill-switcher-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--site-border);
+  border-radius: var(--site-radius-full);
+}
+
+.skill-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--site-surface-2);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius-full);
+  color: var(--site-text-muted);
+  font-size: 14px;
+  font-family: var(--site-font-body);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--site-duration-sm) var(--site-ease);
+  flex-shrink: 0;
+}
+
+.skill-chip:hover {
+  border-color: var(--site-accent);
+  color: var(--site-text);
+  background-color: var(--site-surface);
+}
+
+.skill-chip-active {
+  border-color: var(--site-accent);
+  color: var(--site-accent);
+  background-color: var(--site-surface);
+}
+
+.skill-chip-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--site-radius-full);
+  flex-shrink: 0;
+  border: 1px solid var(--site-border);
+}
+
+.skill-chip-name {
+  font-weight: 500;
+}

@@ -1,0 +1,230 @@
+/* ============================================================
+   MINIMALIST MONOCHROME SKILL — globals.css
+   ============================================================ */
+
+/* ── FONT IMPORT ──────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── CSS VARIABLES ────────────────────────────────────────── */
+:root {
+  --color-bg:           #FFFFFF;
+  --color-fg:           #000000;
+  --color-muted:        #F5F5F5;
+  --color-muted-fg:     #525252;
+  --color-border:       #000000;
+  --color-border-light: #E5E5E5;
+  --color-card:         #FFFFFF;
+  --color-ring:         #000000;
+}
+
+/* ── BASE RESET ───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important; /* Non-negotiable — enforced globally */
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.7;
+}
+
+/* ── SELECTION ────────────────────────────────────────────── */
+/* Inverted — matches the system's emphasis mechanism */
+::selection {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+/* ── FOCUS ────────────────────────────────────────────────── */
+/* Black outline — no color, no soft ring */
+:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 3px;
+  box-shadow: none; /* Never use shadow for focus in this skill */
+}
+
+/* ── SCROLLBAR ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFFFFF; }
+::-webkit-scrollbar-thumb { background: #000000; }
+
+/* ── LINKS ────────────────────────────────────────────────── */
+a {
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 100ms linear;
+}
+a:hover {
+  border-bottom-color: #000000;
+}
+
+/* ── SECTION RULES ────────────────────────────────────────── */
+/* Use <hr class="section-rule"> between every major section */
+.section-rule {
+  border: none;
+  border-top: 4px solid #000000;
+  margin: 0;
+}
+
+.section-rule-ultra {
+  border: none;
+  border-top: 8px solid #000000;
+  margin: 0;
+}
+
+.section-rule-light {
+  border: none;
+  border-top: 1px solid #E5E5E5;
+  margin: 0;
+}
+
+/* ── TEXTURE PATTERNS ─────────────────────────────────────── */
+
+/* Horizontal lines — global default texture */
+.texture-lines {
+  position: relative;
+}
+.texture-lines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    #000 1px,
+    #000 2px
+  );
+  background-size: 100% 4px;
+  opacity: 0.015;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid texture — editorial sections */
+.texture-grid {
+  position: relative;
+}
+.texture-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#00000008 1px, transparent 1px),
+    linear-gradient(90deg, #00000008 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Diagonal lines — process/timeline */
+.texture-diagonal {
+  position: relative;
+}
+.texture-diagonal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    #00000008 40px,
+    #00000008 42px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Inverted vertical lines — for dark (black bg) sections */
+.texture-lines-inverted {
+  position: relative;
+}
+.texture-lines-inverted::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 1px,
+    #fff 1px,
+    #fff 2px
+  );
+  background-size: 4px 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content above texture */
+.texture-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── INVERSION UTILITY ────────────────────────────────────── */
+/* Apply to sections that should be black bg / white text */
+.inverted {
+  background: #000000;
+  color: #FFFFFF;
+}
+.inverted a {
+  color: #FFFFFF;
+  border-bottom-color: transparent;
+}
+.inverted a:hover {
+  border-bottom-color: #FFFFFF;
+}
+.inverted hr,
+.inverted .section-rule {
+  border-top-color: #FFFFFF;
+}
+
+/* ── LABEL UTILITY ────────────────────────────────────────── */
+.label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #525252;
+}
+
+/* ── SKIP LINK ────────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: #000000;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 9999;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── REDUCED MOTION ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

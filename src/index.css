@@ -1,0 +1,25 @@
+/* Minimal reset - main styles are in styles.css */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Scroll targets: leave room for sticky header (Nav + SkillSwitcherStrip) */
+#how-it-works,
+#skills,
+#platforms {
+  scroll-margin-top: 160px;
+}
+
+/* Brand: GET smaller, DRIP larger */
+.brand-get {
+  font-size: 0.55em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0.92;
+  vertical-align: 0.0em;
+}
+.brand-drip {
+  font-size: 1em;
+  font-weight: 700;
+}

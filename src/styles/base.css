@@ -1,0 +1,86 @@
+/* ============================================================
+   BASE CSS — Site Token Contract
+   All components use only these CSS vars (never hardcoded values)
+   ============================================================ */
+
+:root {
+  /* ── BACKGROUNDS ──────────────────────────────────────────── */
+  --site-bg:          #0d0d0d;   /* Page background */
+  --site-surface:     #1a1a1a;   /* Card/panel surface */
+  --site-surface-2:   #242424;   /* Elevated surface */
+
+  /* ── TEXT ────────────────────────────────────────────────── */
+  --site-text:        #f0f0f0;   /* Primary text */
+  --site-text-muted:  #888888;   /* Secondary text */
+  --site-text-accent: #ffffff;   /* Emphasized text */
+
+  /* ── HERO ────────────────────────────────────────────────── */
+  --site-hero-bg:     var(--site-bg);   /* Hero section background (defaults to site bg) */
+  --site-hero-text:   var(--site-text);  /* Hero headline text (defaults to site text) */
+  /* Optional: decorative shape colors (fallback to accent for single-color themes) */
+  --site-hero-shape-1: var(--site-accent);
+  --site-hero-shape-2: var(--site-accent-2);
+  --site-hero-shape-3: var(--site-accent);
+  --site-hero-shape-4: var(--site-accent-2);
+
+  /* ── ACCENT ──────────────────────────────────────────────── */
+  --site-accent:      #00ff41;   /* Primary accent color */
+  --site-accent-2:    #00cc33;   /* Hover/pressed accent */
+  --site-accent-fg:   #000000;   /* Text on accent background */
+
+  /* ── BORDERS ─────────────────────────────────────────────── */
+  --site-border:      #2a2a2a;   /* Default border */
+  --site-border-strong: #444444; /* Emphasized border */
+
+  /* ── SHADOWS ──────────────────────────────────────────────── */
+  --site-shadow-sm:   0 2px 4px rgba(0,0,0,0.3);
+  --site-shadow-md:   0 4px 16px rgba(0,0,0,0.4);
+  --site-shadow-lg:   0 8px 32px rgba(0,0,0,0.5);
+  --site-shadow-glow: 0 0 20px rgba(0,255,65,0.3);
+
+  /* ── RADIUS ──────────────────────────────────────────────── */
+  --site-radius-sm:   4px;
+  --site-radius-md:   8px;
+  --site-radius-lg:   16px;
+  --site-radius-full: 9999px;
+
+  /* ── TYPOGRAPHY ──────────────────────────────────────────── */
+  --site-font-head:   'Inter', sans-serif;
+  --site-font-body:   'Inter', sans-serif;
+  --site-font-mono:   'JetBrains Mono', monospace;
+
+  /* ── MOTION ──────────────────────────────────────────────── */
+  --site-ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --site-duration-sm: 150ms;
+  --site-duration-md: 300ms;
+  --site-duration-lg: 500ms;
+}
+
+/* The root transition — makes ALL var changes animate */
+:root {
+  transition:
+    background-color var(--site-duration-md) var(--site-ease),
+    color var(--site-duration-md) var(--site-ease);
+}
+
+/* Apply CSS vars to body */
+body {
+  background-color: var(--site-bg);
+  color: var(--site-text);
+  font-family: var(--site-font-body);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+html {
+  background-color: var(--site-bg);
+  scroll-behavior: smooth;
+}
+
+/* Shared container class */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
