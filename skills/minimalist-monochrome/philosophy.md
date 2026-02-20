@@ -3,7 +3,7 @@
 ## The Reference World
 
 Imagine a Chanel campaign from the 1990s. Black ink on white paper.
-A single oversized serif word. Generous white margins. Nothing else.
+A single oversized sans-serif word. Generous white margins. Nothing else.
 
 Or the cover of a Phaidon architectural monograph — a full-bleed black and white
 photograph, a name set in a classical typeface, a thin rule separating the title.
@@ -32,13 +32,13 @@ The question is never "what color should this be?" The question is:
 In most design systems, typography serves content.
 In this system, typography IS the content — and the decoration.
 
-An 8xl serif headline is not just text. It is a graphic element that divides space,
-creates visual weight, and establishes hierarchy. A pull quote in large italic Playfair
-Display is not just emphasis — it is visual art.
+An 8xl sans-serif headline is not just text. It is a graphic element that divides space,
+creates visual weight, and establishes hierarchy. A pull quote in large italic Inter
+is not just emphasis — it is visual art.
 
-The serif typefaces (Playfair Display, Source Serif 4) were chosen deliberately.
-Their high contrast strokes, their bracketed serifs, their elegant proportions —
-these create visual interest without any color. Sans-serif would flatten the design.
+The sans-serif typeface (Inter) was chosen deliberately. Clean lines and even weight
+create a modern, editorial clarity without any color. The restraint reinforces the
+monochrome authority.
 
 ### 3. Lines Create Architecture
 Without color, shadows, or gradients to delineate space, this system uses lines.
@@ -99,7 +99,7 @@ Slow, bouncy animations would contradict the austere personality entirely.
 | Any accent color | Pure black and white only |
 | Rounded corners | 0px radius everywhere |
 | Drop shadows | No shadows — ever |
-| Sans-serif headings | Playfair Display serif |
+| Serif headings | Inter sans-serif |
 | Slow easing animations | 100ms max, instant feel |
 | Gradient fills | Flat black or flat white |
 | Colored focus rings | 3px solid black outline |

@@ -1,6 +1,6 @@
 // src/skills/index.js
-import { defaultTheme } from './registered/default/theme';
-import { defaultMeta } from './registered/default/meta';
+import { linearModernTheme } from './registered/linear-modern/theme';
+import { linearModernMeta } from './registered/linear-modern/meta';
 
 import { minimalistMonochromeTheme } from './registered/minimalist-monochrome/theme';
 import { minimalistMonochromeMeta } from './registered/minimalist-monochrome/meta';
@@ -8,27 +8,21 @@ import { minimalistMonochromeMeta } from './registered/minimalist-monochrome/met
 import { playfulGeometricTheme } from './registered/playful-geometric/theme';
 import { playfulGeometricMeta } from './registered/playful-geometric/meta';
 
-import { linearModernTheme } from './registered/linear-modern/theme';
-import { linearModernMeta } from './registered/linear-modern/meta';
-
 export const skillThemes = {
-  'default': defaultTheme,
+  'linear-modern': linearModernTheme,
   'minimalist-monochrome': minimalistMonochromeTheme,
   'playful-geometric': playfulGeometricTheme,
-  'linear-modern': linearModernTheme,
 };
 
 export const skillMetas = {
-  'default': defaultMeta,
+  'linear-modern': linearModernMeta,
   'minimalist-monochrome': minimalistMonochromeMeta,
   'playful-geometric': playfulGeometricMeta,
-  'linear-modern': linearModernMeta,
 };
 
-// Ordered list for the SkillSwitcherStrip and Skills page grid
+// Ordered list for the SkillSwitcherStrip and Skills page grid (linear-modern is the site default)
 export const skillList = [
-  defaultMeta,
+  linearModernMeta,
   minimalistMonochromeMeta,
   playfulGeometricMeta,
-  linearModernMeta,
 ];

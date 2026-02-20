@@ -90,7 +90,7 @@ padding: 8px 12px;
 border: 2px solid #000000;
 margin-right: 12px;
 margin-top: 4px;
-font-family: "Playfair Display", serif;
+font-family: "Inter", sans-serif;
 font-weight: 700;
 ```
 

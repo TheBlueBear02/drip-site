@@ -4,6 +4,7 @@ import Hero from '../components/sections/Hero';
 import HowItWorks from '../components/sections/HowItWorks';
 import SkillsPreview from '../components/sections/SkillsPreview';
 import PlatformSupport from '../components/sections/PlatformSupport';
+import FAQ from '../components/sections/FAQ';
 import Footer from '../components/layout/Footer';
 
 function Home() {
@@ -17,6 +18,7 @@ function Home() {
       <HowItWorks />
       <SkillsPreview />
       <PlatformSupport />
+      <FAQ />
       <Footer />
     </>
   );

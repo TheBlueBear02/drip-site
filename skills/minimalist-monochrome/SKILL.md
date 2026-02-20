@@ -26,7 +26,7 @@ Read these files in order before generating anything:
 
 1. `philosophy.md`           ← The soul. Read this first, always.
 2. `tokens/colors.md`        ← Pure black and white. Every rule matters.
-3. `tokens/typography.md`    ← Serif fonts as hero. The oversized scale.
+3. `tokens/typography.md`    ← Sans-serif fonts as hero. The oversized scale.
 4. `tokens/borders.md`       ← Lines create structure. No shadows.
 5. `tokens/shadows.md`       ← There are none. Understand why.
 6. `tokens/motion.md`        ← Instant and binary. No easing.
@@ -59,8 +59,8 @@ It shows every token working together as a complete editorial world.
   No accent colors. No brand colors. Black IS the accent.
 - **Border radius**: Always `0px`. Everywhere. No exceptions.
 - **Shadows**: None. Ever. Depth comes from inversion and border weight.
-- **Font families**: Playfair Display for headings, Source Serif 4 for body.
-  These serif fonts define the entire editorial personality.
+- **Font families**: Inter for headings and body (sans-serif).
+  This sans-serif font defines the clean editorial personality.
 - **Motion speed**: Maximum 100ms transitions. No bouncing, no easing curves.
   All interactions are instant and binary.
 - **Horizontal rules**: 4px black lines must separate all major sections.
@@ -86,5 +86,5 @@ It shows every token working together as a complete editorial world.
 ## STACK REQUIREMENTS
 - React 18+
 - Tailwind CSS 3+ (config extended via `integration/tailwind.config.js`)
-- Playfair Display + Source Serif 4 + JetBrains Mono via Google Fonts
+- Inter + JetBrains Mono via Google Fonts
 - No animation libraries needed — all motion is CSS only

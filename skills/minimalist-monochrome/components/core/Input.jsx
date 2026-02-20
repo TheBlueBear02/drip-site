@@ -67,7 +67,7 @@ export function Input({
           borderRadius: 0,
           padding: "12px 0",
           fontSize: 16,
-          fontFamily: '"Source Serif 4", serif',
+          fontFamily: '"Inter", sans-serif',
           color: "#000000",
           outline: "none",
           width: "100%",

@@ -15,6 +15,11 @@ function Nav() {
       .catch(() => setStars(null));
   }, []);
 
+  const handleScrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleScrollTo = (e, sectionId) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
@@ -27,7 +32,7 @@ function Nav() {
     <nav className="nav">
       <div className="container">
         <div className="nav-content">
-          <a href="#home" onClick={(e) => handleScrollTo(e, 'home')} className="nav-logo">
+          <a href="#" onClick={handleScrollToTop} className="nav-logo" aria-label="Scroll to top">
             <span className="brand-get">GET</span><span className="brand-drip">DRIP</span>
           </a>
           <div className="nav-links">
@@ -39,6 +44,9 @@ function Nav() {
             </a>
             <a href="#platforms" onClick={(e) => handleScrollTo(e, 'platforms')} className="nav-link">
               Platforms
+            </a>
+            <a href="#faq" onClick={(e) => handleScrollTo(e, 'faq')} className="nav-link">
+              Q&A
             </a>
           </div>
           <div className="nav-right">

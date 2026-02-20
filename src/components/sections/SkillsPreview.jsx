@@ -6,11 +6,11 @@ import './SkillsPreview.css';
 function SkillsPreview() {
   const { setActiveSkill, activeSkill } = useSkillContext();
   
-  // Get first 3 non-default skills
-  const previewSkills = skillList.filter(skill => skill.id !== 'default').slice(0, 3);
+  // First 3 skills for featured cards (includes default Linear Modern)
+  const previewSkills = skillList.slice(0, 3);
 
   const handlePreviewClick = (skillId) => {
-    // Toggle: if already active, reset to default; otherwise set to this skill
+    // Toggle: if already active, reset to default (linear-modern); otherwise set to this skill
     if (activeSkill === skillId) {
       setActiveSkill(null);
     } else {
@@ -21,7 +21,7 @@ function SkillsPreview() {
   return (
     <section id="skills" className="skills-preview">
       <div className="container">
-        <h2 className="skills-preview-title">Featured Skills</h2>
+        <h2 className="skills-preview-title">Featured Designs</h2>
         <div className="skills-preview-grid">
           {previewSkills.map((skill) => (
             <div

@@ -7,9 +7,9 @@ function FloatingTab() {
   const { activeSkill } = useSkillContext();
   const [copied, setCopied] = useState(false);
 
-  const meta = activeSkill ? skillMetas[activeSkill] : skillMetas['default'];
-  const displayName = meta?.name ?? 'Default';
-  const command = meta?.command ?? 'npx getdrip add default';
+  const meta = activeSkill ? skillMetas[activeSkill] : skillMetas['linear-modern'];
+  const displayName = meta?.name ?? 'Linear Modern';
+  const command = meta?.command ?? 'npx getdrip add linear-modern';
 
   const handleCopy = useCallback(async () => {
     try {

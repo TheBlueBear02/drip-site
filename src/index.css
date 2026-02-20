@@ -7,7 +7,8 @@
 /* Scroll targets: leave room for sticky header (Nav + SkillSwitcherStrip) */
 #how-it-works,
 #skills,
-#platforms {
+#platforms,
+#faq {
   scroll-margin-top: 160px;
 }
 

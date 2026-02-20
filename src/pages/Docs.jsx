@@ -41,7 +41,7 @@ function Docs() {
                         <ul>
                             <li>Lovable</li>
                             <li>Cursor</li>
-                            <li>Bolt</li>
+                            <li>Base44</li>
                             <li>Claude Code</li>
                         </ul>
                     </div>

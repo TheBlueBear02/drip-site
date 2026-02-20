@@ -9,8 +9,8 @@ The site IS the demo. When a user previews a skill, the entire site transforms
 into that design world — fonts, colors, shadows, radius, motion. Everything.
 This is not a modal preview. It is a full live environment swap.
 
-The homepage has a "default" neutral state. The moment a user selects a skill,
-they are no longer on a website about design systems. They are inside one.
+The homepage defaults to the Linear Modern style. The moment a user selects
+another skill, they are no longer on a website about design systems. They are inside one.
 
 ---
 
@@ -166,17 +166,14 @@ getdrip-site/
 │   ├── skills/                     ← THE SKILL REGISTRY
 │   │   ├── index.js                ← Exports all skills as array
 │   │   ├── registered/
-│   │   │   ├── default/
-│   │   │   │   ├── theme.js        ← Neutral default state
+│   │   │   ├── linear-modern/      ← Site default style (Linear/Vercel-style dark, indigo, layered shadows)
+│   │   │   │   ├── theme.js
 │   │   │   │   └── meta.js
 │   │   │   ├── minimalist-monochrome/
 │   │   │   │   ├── theme.js        ← Token overrides
 │   │   │   │   └── meta.js         ← Name, tags, description, components list
-│   │   │   ├── playful-geometric/
-│   │   │   │   ├── theme.js
-│   │   │   │   └── meta.js
-│   │   │   └── linear-modern/
-│   │   │       ├── theme.js        ← Linear/Vercel-style dark (indigo, layered shadows, expo-out)
+│   │   │   └── playful-geometric/
+│   │   │       ├── theme.js
 │   │   │       └── meta.js
 │   │
 │   ├── components/                 ← Site UI components (all use CSS vars)
@@ -194,6 +191,8 @@ getdrip-site/
 │   │       ├── Hero.jsx
 │   │       ├── HowItWorks.jsx
 │   │       ├── SkillsPreview.jsx
+│   │       ├── PlatformSupport.jsx
+│   │       ├── FAQ.jsx              ← Q&A accordion; skill-specific design variants
 │   │       └── SocialProof.jsx
 │   │
 │   ├── pages/
@@ -223,7 +222,7 @@ getdrip-site/
 
 ### 1. Home (/)
 
-The entry point. In the default state, the site uses a clean neutral dark theme.
+The entry point. In the default state, the site uses the Linear Modern style.
 A skill switcher strip is visible — when the user picks a skill, everything transforms.
 
 **Section order:**
@@ -257,8 +256,12 @@ SkillsPreview       ← 3-4 skill cards teaser
   └── Hovering a card applies that skill as a preview
   └── Clicking navigates to /skills/skill-name
 
-SocialProof
-  └── Download count | Number of skills | Supported platforms
+PlatformSupport
+  └── Supported platforms (Cursor, Lovable, Base44, Claude Code, etc.)
+
+FAQ                 ← Questions & Answers (accordion)
+  └── Clickable question containers; on click the answer section opens below
+  └── Design varies by skill: linear-modern (card/shadow), minimalist-monochrome (flat, thin borders), playful-geometric (rounded, friendly)
 
 Footer
 ```
@@ -266,7 +269,7 @@ Footer
 **The SkillSwitcherStrip** — key UX detail:
 - Hover = temporary preview (reverts on mouse leave)
 - Click = locked active skill (persists until another is clicked)
-- "Default" chip always available to reset to neutral state
+- "Linear Modern" chip is the default; clicking it resets to the default style
 - Strip is sticky at the top below the Nav
 
 ---
@@ -386,7 +389,7 @@ Content area
 // - setActiveSkill(skill)
 // - setPreviewSkill(skill | null)
 //
-// The rendered skill = previewSkill ?? activeSkill ?? defaultTheme
+// The rendered skill = previewSkill ?? activeSkill ?? linear-modern (site default)
 // This means hover always wins over locked, locked wins over default
 ```
 
@@ -519,7 +522,7 @@ In order:
 
 1. `base.css` — all CSS vars, reset, root transition
 2. `SkillContext.jsx` + `useSkillTheme.js` — the engine
-3. `src/skills/` — register retro-terminal + playful-geometric + default
+3. `src/skills/` — register linear-modern (default) + minimalist-monochrome + playful-geometric
 4. `Nav.jsx` + `Footer.jsx`
 5. `SkillSwitcherStrip.jsx` — the signature interaction
 6. `Hero.jsx`

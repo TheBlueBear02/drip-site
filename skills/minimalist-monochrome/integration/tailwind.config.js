@@ -22,8 +22,8 @@ module.exports = {
 
       // ── FONTS ────────────────────────────────────────────────────────────────
       fontFamily: {
-        display: ["Playfair Display", "Georgia", "serif"],
-        body:    ["Source Serif 4", "Georgia", "serif"],
+        display: ["Inter", "system-ui", "sans-serif"],
+        body:    ["Inter", "system-ui", "sans-serif"],
         mono:    ["JetBrains Mono", "monospace"],
       },
 

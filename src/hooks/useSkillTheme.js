@@ -11,12 +11,12 @@ import { skillThemes } from '../skills';
 export function useSkillTheme() {
   const { activeSkill, previewSkill } = useSkillContext();
 
-  // Resolve which theme to use: previewSkill ?? activeSkill ?? defaultTheme
+  // Resolve which theme to use: previewSkill ?? activeSkill ?? linear-modern (site default)
   const resolvedTheme = previewSkill 
     ? skillThemes[previewSkill] 
     : activeSkill 
     ? skillThemes[activeSkill] 
-    : skillThemes['default'];
+    : skillThemes['linear-modern'];
 
   useEffect(() => {
     if (!resolvedTheme) return;

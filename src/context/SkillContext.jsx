@@ -6,7 +6,7 @@ export function SkillProvider({ children }) {
   const [activeSkill, setActiveSkill] = useState(null); // The locked skill
   const [previewSkill, setPreviewSkill] = useState(null); // Temporary hover state
 
-  // The rendered skill = previewSkill ?? activeSkill ?? defaultTheme
+  // The rendered skill = previewSkill ?? activeSkill ?? linear-modern (site default)
   // This means hover always wins over locked, locked wins over default
 
   return (

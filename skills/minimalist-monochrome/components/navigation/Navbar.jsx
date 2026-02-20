@@ -5,7 +5,7 @@
 // every major section on the page. This makes the nav feel like it's part of
 // the architectural page structure, not a floating element on top of it.
 //
-// The logo uses Playfair Display italic — the editorial serif in its most elegant form.
+// The logo uses Inter italic — the editorial sans-serif in its most elegant form.
 // WHY: The italic adds a sense of a masthead — like the title of a magazine.
 //
 // Nav links get an underline on hover (border-bottom, not text-decoration).
@@ -46,7 +46,7 @@ export function Navbar({
 
       {/* LOGO — Playfair Display italic masthead style */}
       <span style={{
-        fontFamily: '"Playfair Display", Georgia, serif',
+        fontFamily: '"Inter", system-ui, sans-serif',
         fontSize: 22,
         fontWeight: 700,
         fontStyle: "italic",
@@ -169,7 +169,7 @@ export function Alert({ type = "info", title, children }) {
     <div style={{
       ...v,
       borderRadius: 0,
-      fontFamily: '"Source Serif 4", serif',
+      fontFamily: '"Inter", sans-serif',
     }}>
       {title && (
         <div style={{

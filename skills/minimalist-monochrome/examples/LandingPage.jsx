@@ -3,7 +3,7 @@
 //
 // What to notice:
 // - 4px black horizontal rules between EVERY section — the architectural spine
-// - Oversized Playfair Display headlines — 7xl–9xl. Bigger than feels comfortable.
+// - Oversized Inter (sans-serif) headlines — 7xl–9xl. Bigger than feels comfortable.
 // - Every section has a subtle texture layer (horizontal lines, grid, diagonal)
 // - The stats section is fully inverted — black background, white text
 // - Feature cards invert completely on hover — 100ms, instant
@@ -12,8 +12,8 @@
 // - Zero shadows anywhere
 // - Zero accent colors — black IS the accent
 // - JetBrains Mono for all labels, metadata, and buttons
-// - Source Serif 4 for all body text
-// - Playfair Display italic for pull quotes and emphasis
+// - Inter for all body and heading text (sans-serif)
+// - Inter italic for pull quotes and emphasis
 
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
@@ -29,17 +29,17 @@ const t = {
 };
 
 const FONTS = {
-  display: '"Playfair Display", Georgia, serif',
-  body:    '"Source Serif 4", Georgia, serif',
+  display: '"Inter", system-ui, sans-serif',
+  body:    '"Inter", system-ui, sans-serif',
   mono:    '"JetBrains Mono", monospace',
 };
 
 // ── GLOBAL STYLES ─────────────────────────────────────────────────────────────
 const styles = `
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
-  body { background: #fff; color: #000; font-family: "Source Serif 4", Georgia, serif; -webkit-font-smoothing: antialiased; }
+  body { background: #fff; color: #000; font-family: "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   ::selection { background: #000; color: #fff; }
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: #fff; }

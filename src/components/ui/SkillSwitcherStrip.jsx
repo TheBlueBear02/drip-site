@@ -3,53 +3,31 @@ import { skillList } from '../../skills';
 import './SkillSwitcherStrip.css';
 
 function SkillSwitcherStrip() {
-  const { activeSkill, setActiveSkill, setPreviewSkill } = useSkillContext();
-
-  const handleMouseEnter = (skillId) => {
-    setPreviewSkill(skillId);
-  };
-
-  const handleMouseLeave = () => {
-    setPreviewSkill(null);
-  };
+  const { activeSkill, setActiveSkill } = useSkillContext();
 
   const handleClick = (skillId) => {
     setActiveSkill(skillId);
-    setPreviewSkill(null); // Clear preview when locking
   };
 
-  const handleDefaultClick = () => {
+  // Linear Modern is the site default: clicking it "resets" to default (null)
+  const handleDefaultStyleClick = () => {
     setActiveSkill(null);
-    setPreviewSkill(null);
   };
-
-  // Filter out default from skillList since we show it separately
-  const nonDefaultSkills = skillList.filter(skill => skill.id !== 'default');
 
   return (
     <div className="skill-switcher-strip">
       <div className="container">
         <div className="skill-switcher-scroll">
-          {/* Default chip */}
-          <button
-            className={`skill-chip ${activeSkill === null || activeSkill === 'default' ? 'skill-chip-active' : ''}`}
-            onMouseEnter={() => handleMouseEnter('default')}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleDefaultClick}
-          >
-            <span className="skill-chip-name">Default</span>
-          </button>
-
-          {/* Skill chips */}
-          {nonDefaultSkills.map((skill) => {
-            const isActive = activeSkill === skill.id;
+          {skillList.map((skill) => {
+            const isDefaultStyle = skill.id === 'linear-modern';
+            const isActive = isDefaultStyle
+              ? activeSkill === null || activeSkill === 'linear-modern'
+              : activeSkill === skill.id;
             return (
               <button
                 key={skill.id}
                 className={`skill-chip ${isActive ? 'skill-chip-active' : ''}`}
-                onMouseEnter={() => handleMouseEnter(skill.id)}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick(skill.id)}
+                onClick={isDefaultStyle ? handleDefaultStyleClick : () => handleClick(skill.id)}
               >
                 <span
                   className="skill-chip-swatch"

@@ -1,7 +1,7 @@
 export const minimalistMonochromeTheme = {
   id: 'minimalist-monochrome',
   name: 'Minimalist Monochrome',
-  fontUrl: 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap',
+  fontUrl: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap',
 
   tokens: {
     // ── BACKGROUNDS ─────────────────────────────────────────────────────
@@ -44,8 +44,8 @@ export const minimalistMonochromeTheme = {
     '--site-radius-full':    '0px',       // Zero radius everywhere
 
     // ── TYPOGRAPHY ──────────────────────────────────────────────────────
-    '--site-font-head':      '"Playfair Display", Georgia, serif',  // Display/headings font
-    '--site-font-body':      '"Source Serif 4", Georgia, serif',    // Body font
+    '--site-font-head':      '"Inter", system-ui, sans-serif',  // Display/headings font
+    '--site-font-body':      '"Inter", system-ui, sans-serif',   // Body font
     '--site-font-mono':      '"JetBrains Mono", "Courier New", monospace',  // Mono font
 
     // ── MOTION ──────────────────────────────────────────────────────────

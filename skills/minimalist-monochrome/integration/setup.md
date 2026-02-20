@@ -18,7 +18,7 @@ into your project's `tailwind.config.js`.
 
 Key things added:
 - `mm.*` color tokens
-- `font-display` (Playfair Display), `font-body` (Source Serif 4), `font-mono` (JetBrains Mono)
+- `font-display` (Inter), `font-body` (Inter), `font-mono` (JetBrains Mono)
 - All border-radius values set to `0px`
 - Extended `8xl` and `9xl` font sizes
 - `transition-mm` linear easing utility
@@ -52,7 +52,7 @@ export default function SkillTest() {
     <div style={{ background: "#fff", minHeight: "100vh", padding: "80px" }}>
       <hr style={{ border: "none", borderTop: "4px solid #000", marginBottom: "80px" }} />
       <h1 style={{
-        fontFamily: "Playfair Display, serif",
+        fontFamily: "Inter, sans-serif",
         fontSize: "clamp(64px, 10vw, 128px)",
         fontWeight: 900,
         letterSpacing: "-0.05em",
@@ -85,7 +85,7 @@ export default function SkillTest() {
 You should see:
 - Pure white background
 - 4px black horizontal rules (not hairlines, not gray)
-- Playfair Display rendering for the headline
+- Inter (sans-serif) rendering for the headline
 - JetBrains Mono on the button label
 - Zero border radius on the button
 - No shadows anywhere

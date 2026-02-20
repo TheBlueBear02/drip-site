@@ -47,15 +47,22 @@
 }
 
 .skill-chip:hover {
-  border-color: var(--site-accent);
-  color: var(--site-text);
   background-color: var(--site-surface);
+  border-color: var(--site-text-muted);
+  color: var(--site-text);
 }
 
 .skill-chip-active {
   border-color: var(--site-accent);
   color: var(--site-accent);
   background-color: var(--site-surface);
+}
+
+.skill-chip-active:hover {
+  border-color: var(--site-accent);
+  color: var(--site-accent);
+  background-color: var(--site-surface);
+  opacity: 0.9;
 }
 
 .skill-chip-swatch {

@@ -4,14 +4,14 @@ import CopyCommand from '../ui/CopyCommand';
 import './Hero.css';
 
 const HERO_HEADLINE = 'Your AI App Works. Now Make It Look Good.';
-const TYPING_MS_PER_CHAR = 80;
-const SENTENCE_BREAK_MS = 800;
+const TYPING_MS_PER_CHAR = 70;
+const SENTENCE_BREAK_MS = 1000;
 const CURSOR_BLINK_MS = 530;
 const FIRST_SENTENCE_END = HERO_HEADLINE.indexOf('.') + 1;
 
 function Hero() {
   const { activeSkill, previewSkill } = useSkillContext();
-  const resolvedSkillId = previewSkill ?? activeSkill ?? 'default';
+  const resolvedSkillId = previewSkill ?? activeSkill ?? 'linear-modern';
   const isPlayfulGeometric = resolvedSkillId === 'playful-geometric';
 
   const [headlineVisibleLength, setHeadlineVisibleLength] = useState(0);
@@ -39,7 +39,7 @@ function Hero() {
     return () => clearTimeout(t);
   }, [headlineVisibleLength]);
 
-  const defaultCommand = 'npx getdrip add [skill-name]';
+  const defaultCommand = 'npx getdrip add [design-name]';
 
   const content = (
     <>
