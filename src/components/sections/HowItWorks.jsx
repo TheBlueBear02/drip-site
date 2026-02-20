@@ -15,12 +15,7 @@ const steps = [
     number: 3,
     title: 'Paste in your agent\'s chat',
     description: 'Run the command in your project. Your agent transforms your UI instantly.',
-  },
-  {
-    number: 4,
-    title: 'Watch your UI transform',
-    description: 'See your interface come alive with the chosen design system. Every component adapts automatically.',
-  },
+  }
 ];
 
 function HowItWorks() {

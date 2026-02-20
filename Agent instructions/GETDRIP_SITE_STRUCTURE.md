@@ -165,14 +165,19 @@ getdrip-site/
 │   │
 │   ├── skills/                     ← THE SKILL REGISTRY
 │   │   ├── index.js                ← Exports all skills as array
-│   │   ├── default/
-│   │   │   └── theme.js            ← Neutral default state
-│   │   ├── retro-terminal/
-│   │   │   ├── theme.js            ← Token overrides
-│   │   │   └── meta.js             ← Name, tags, description, components list
-│   │   └── playful-geometric/
-│   │       ├── theme.js
-│   │       └── meta.js
+│   │   ├── registered/
+│   │   │   ├── default/
+│   │   │   │   ├── theme.js        ← Neutral default state
+│   │   │   │   └── meta.js
+│   │   │   ├── minimalist-monochrome/
+│   │   │   │   ├── theme.js        ← Token overrides
+│   │   │   │   └── meta.js         ← Name, tags, description, components list
+│   │   │   ├── playful-geometric/
+│   │   │   │   ├── theme.js
+│   │   │   │   └── meta.js
+│   │   │   └── linear-modern/
+│   │   │       ├── theme.js        ← Linear/Vercel-style dark (indigo, layered shadows, expo-out)
+│   │   │       └── meta.js
 │   │
 │   ├── components/                 ← Site UI components (all use CSS vars)
 │   │   ├── layout/
@@ -225,7 +230,7 @@ A skill switcher strip is visible — when the user picks a skill, everything tr
 
 ```
 Nav
-  └── Logo | Skills | Docs | "Browse Skills" CTA button
+  └── Logo | How It Works | Skills | Platforms | GitHub stars counter (right) | "Browse Skills" CTA
 
 SkillSwitcherStrip   ← PERSISTENT across all pages
   └── Horizontal scrollable row of skill chips

@@ -1,6 +1,20 @@
+import { useState, useEffect } from 'react';
 import './Nav.css';
 
+// Full repo path for GitHub API (owner/repo)
+const GITHUB_REPO = 'TheBlueBear02/drip-cli';
+const GITHUB_URL = `https://github.com/${GITHUB_REPO}`;
+
 function Nav() {
+  const [stars, setStars] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://api.github.com/repos/${GITHUB_REPO}`)
+      .then((res) => res.ok ? res.json() : Promise.reject(res))
+      .then((data) => setStars(data.stargazers_count))
+      .catch(() => setStars(null));
+  }, []);
+
   const handleScrollTo = (e, sectionId) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
@@ -27,9 +41,24 @@ function Nav() {
               Platforms
             </a>
           </div>
-          <a href="#skills" onClick={(e) => handleScrollTo(e, 'skills')} className="nav-cta">
-            Browse Skills
-          </a>
+          <div className="nav-right">
+            <a
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-stars"
+              aria-label={stars != null ? `${stars} stars on GitHub` : 'View on GitHub'}
+            >
+              <span className="nav-stars-label">GitHub Stars</span>
+              <span className="nav-stars-icon" aria-hidden>★</span>
+              <span className="nav-stars-count">
+                {stars != null ? stars.toLocaleString() : '—'}
+              </span>
+            </a>
+            <a href="#skills" onClick={(e) => handleScrollTo(e, 'skills')} className="nav-cta">
+              Browse Skills
+            </a>
+          </div>
         </div>
       </div>
     </nav>

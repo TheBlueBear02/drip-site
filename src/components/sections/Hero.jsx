@@ -1,23 +1,55 @@
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { useSkillContext } from '../../context/SkillContext';
 import CopyCommand from '../ui/CopyCommand';
 import './Hero.css';
+
+const HERO_HEADLINE = 'Your AI App Works. Now Make It Look Good.';
+const TYPING_MS_PER_CHAR = 80;
+const SENTENCE_BREAK_MS = 800;
+const CURSOR_BLINK_MS = 530;
+const FIRST_SENTENCE_END = HERO_HEADLINE.indexOf('.') + 1;
 
 function Hero() {
   const { activeSkill, previewSkill } = useSkillContext();
   const resolvedSkillId = previewSkill ?? activeSkill ?? 'default';
   const isPlayfulGeometric = resolvedSkillId === 'playful-geometric';
 
+  const [headlineVisibleLength, setHeadlineVisibleLength] = useState(0);
+  const [typingDone, setTypingDone] = useState(false);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setHeadlineVisibleLength(HERO_HEADLINE.length);
+      setTypingDone(true);
+      return;
+    }
+
+    if (headlineVisibleLength >= HERO_HEADLINE.length) {
+      setTypingDone(true);
+      return;
+    }
+
+    const delay =
+      headlineVisibleLength === FIRST_SENTENCE_END ? SENTENCE_BREAK_MS : TYPING_MS_PER_CHAR;
+    const t = setTimeout(() => {
+      setHeadlineVisibleLength((n) => Math.min(n + 1, HERO_HEADLINE.length));
+    }, delay);
+
+    return () => clearTimeout(t);
+  }, [headlineVisibleLength]);
+
   const defaultCommand = 'npx getdrip add [skill-name]';
 
   const content = (
     <>
-      <p className="hero-eyebrow">Design skills for AI agents</p>
+      <p className="hero-eyebrow">CURE THE "DEFAULT UI" LOOK</p>
       <h1 className="hero-headline">
-        Transform Your AI Design in Seconds 
+        {HERO_HEADLINE.slice(0, headlineVisibleLength)}
+        {!typingDone && <span className="hero-headline-cursor" aria-hidden="true">|</span>}
       </h1>
       <p className="hero-subheadline">
-      Use GetDRIP to add beautiful design skills to your vibe coding project with only one line
+       Drop fully realized design system into your vibe coding workflow with exactly one line.
       </p>
       <div className="hero-cta-group">
         <div className="hero-command">

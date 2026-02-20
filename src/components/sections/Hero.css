@@ -2,6 +2,7 @@
 
 .hero {
   position: relative;
+  min-height: 720px;
   padding: 100px 0 140px;
   text-align: center;
   overflow: hidden;
@@ -200,6 +201,23 @@
   letter-spacing: -0.02em;
   color: var(--site-hero-text);
   font-family: var(--site-font-head);
+}
+
+.hero-headline-cursor {
+  display: inline-block;
+  animation: hero-cursor-blink 530ms step-end infinite;
+  margin-left: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-headline-cursor {
+    animation: none;
+  }
+}
+
+@keyframes hero-cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .hero-accent {
