@@ -28,7 +28,7 @@ export const skillMetas = {
 // Ordered list for the SkillSwitcherStrip and Skills page grid (linear-modern is the site default)
 export const skillList = [
   linearModernMeta,
+  clayPremiumMeta,
   minimalistMonochromeMeta,
   playfulGeometricMeta,
-  clayPremiumMeta,
 ];

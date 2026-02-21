@@ -25,14 +25,12 @@ function SkillsPreview() {
   const previewSkills = skillList;
   const slides = slidingSlides(previewSkills, CARDS_PER_VIEW);
   const totalPages = slides.length;
-  const canGoPrev = pageIndex > 0;
-  const canGoNext = pageIndex < totalPages - 1;
 
   const goPrev = useCallback(() => {
-    setPageIndex((i) => Math.max(0, i - 1));
-  }, []);
+    setPageIndex((i) => (i - 1 + totalPages) % totalPages);
+  }, [totalPages]);
   const goNext = useCallback(() => {
-    setPageIndex((i) => Math.min(totalPages - 1, i + 1));
+    setPageIndex((i) => (i + 1) % totalPages);
   }, [totalPages]);
 
   const handlePreviewClick = (skillId) => {
@@ -52,7 +50,6 @@ function SkillsPreview() {
             type="button"
             className="skills-preview-arrow skills-preview-arrow--prev"
             onClick={goPrev}
-            disabled={!canGoPrev}
             aria-label="Previous designs"
           />
           <div className="skills-preview-viewport">
@@ -101,7 +98,6 @@ function SkillsPreview() {
             type="button"
             className="skills-preview-arrow skills-preview-arrow--next"
             onClick={goNext}
-            disabled={!canGoNext}
             aria-label="Next designs"
           />
         </div>

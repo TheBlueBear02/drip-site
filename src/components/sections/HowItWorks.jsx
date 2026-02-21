@@ -14,7 +14,7 @@ const steps = [
   {
     number: 3,
     title: 'Paste in your project',
-    description: 'Run the command in your project and follow the 1 prompt instructions. Your agent transforms your UI instantly.',
+    description: 'Run the command in your project. Your agent transforms your UI instantly. Without hurting your project.',
   }
 ];
 

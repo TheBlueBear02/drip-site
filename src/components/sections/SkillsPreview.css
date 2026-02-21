@@ -94,6 +94,8 @@
 
 .skills-preview-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: var(--site-surface);
   border: 1px solid var(--site-border);
   border-radius: var(--site-radius-md);
@@ -129,6 +131,7 @@
 }
 
 .skills-preview-card-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -167,7 +170,7 @@
 }
 
 .skills-preview-card-command {
-  margin-top: 8px;
+  margin-top: auto;
 }
 
 .skills-preview-card-link {
