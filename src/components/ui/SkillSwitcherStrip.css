@@ -29,6 +29,12 @@
   border-radius: var(--site-radius-full);
 }
 
+@media (max-width: 768px) {
+  .skill-switcher-scroll {
+    padding-bottom: 10px;
+  }
+}
+
 .skill-chip {
   display: flex;
   align-items: center;

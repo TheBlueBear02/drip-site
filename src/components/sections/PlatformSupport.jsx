@@ -2,7 +2,7 @@ import './PlatformSupport.css';
 import { useSkillContext } from '../../context/SkillContext';
 import { skillMetas } from '../../skills';
 
-const LOGOS_BASE = '/platforms%20logos';
+const LOGOS_BASE = `${import.meta.env.BASE_URL}platforms%20logos`;
 
 const DEFAULT_SKILL = 'linear-modern';
 

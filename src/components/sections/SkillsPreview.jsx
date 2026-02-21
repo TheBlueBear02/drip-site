@@ -5,7 +5,18 @@ import CopyCommand from '../ui/CopyCommand';
 import './SkillsPreview.css';
 
 const CARDS_PER_VIEW = 3;
+const MOBILE_INITIAL_CARDS = 3;
+const MOBILE_SHOW_MORE_COUNT = 3;
 const MOBILE_BREAKPOINT = 768;
+
+// Preview image filenames in public/styles preview/ (one per skill)
+const PREVIEW_IMAGES = {
+  'linear-modern': 'linear modern.png',
+  'clay-premium': 'clay-premium.png',
+  'minimalist-monochrome': 'minimalist-monochrome.png',
+  'playful-geometric': 'playful-geomtric.png',
+  'neo-brutalism': 'neo-brutalism.png',
+};
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(() =>
@@ -20,14 +31,13 @@ function useIsMobile() {
   return isMobile;
 }
 
-/** Sliding window: each slide shows 3 cards; one click moves by 1 card (left or right). */
-function slidingSlides(arr, size) {
-  if (arr.length <= size) return [arr];
-  const slides = [];
-  for (let i = 0; i <= arr.length - size; i++) {
-    slides.push(arr.slice(i, i + size));
+/** Chunk into pages of 3; each btn click swaps all 3 visible cards for the next/prev page. */
+function chunkPages(arr, size) {
+  const pages = [];
+  for (let i = 0; i < arr.length; i += size) {
+    pages.push(arr.slice(i, i + size));
   }
-  return slides;
+  return pages.length ? pages : [arr];
 }
 
 function SkillCard({ skill, isActive, onPreviewClick }) {
@@ -41,6 +51,13 @@ function SkillCard({ skill, isActive, onPreviewClick }) {
         >
           {isActive ? 'Active' : 'Preview'}
         </button>
+        {PREVIEW_IMAGES[skill.id] && (
+          <img
+            src={`${import.meta.env.BASE_URL}${['styles preview', PREVIEW_IMAGES[skill.id]].map(encodeURIComponent).join('/')}`}
+            alt={`${skill.name} style preview`}
+            className="skills-preview-card-preview-img"
+          />
+        )}
         <div
           className="skills-preview-card-preview-bg"
           style={{ backgroundColor: skill.bgColor }}
@@ -69,10 +86,17 @@ function SkillsPreview() {
   const resolvedSkillId = previewSkill ?? activeSkill ?? 'linear-modern';
   const isPlayfulGeometric = resolvedSkillId === 'playful-geometric';
   const [pageIndex, setPageIndex] = useState(0);
+  const [mobileVisibleCount, setMobileVisibleCount] = useState(MOBILE_INITIAL_CARDS);
   const isMobile = useIsMobile();
 
   const previewSkills = skillList;
-  const slides = slidingSlides(previewSkills, CARDS_PER_VIEW);
+  const visibleSkills = isMobile
+    ? previewSkills.slice(0, mobileVisibleCount)
+    : previewSkills;
+  const hasMoreMobile = isMobile && mobileVisibleCount < previewSkills.length;
+  const showMoreMobile = () =>
+    setMobileVisibleCount((n) => Math.min(n + MOBILE_SHOW_MORE_COUNT, previewSkills.length));
+  const slides = chunkPages(previewSkills, CARDS_PER_VIEW);
   const totalPages = slides.length;
 
   const goPrev = useCallback(() => {
@@ -96,22 +120,36 @@ function SkillsPreview() {
         <h2 className="skills-preview-title">Featured Designs</h2>
 
         {isMobile ? (
-          <div className="skills-preview-gallery">
-            {previewSkills.map((skill) => (
-              <SkillCard
-                key={skill.id}
-                skill={skill}
-                isActive={activeSkill === skill.id}
-                onPreviewClick={handlePreviewClick}
-              />
-            ))}
-          </div>
+          <>
+            <div className="skills-preview-gallery">
+              {visibleSkills.map((skill) => (
+                <SkillCard
+                  key={skill.id}
+                  skill={skill}
+                  isActive={activeSkill === skill.id}
+                  onPreviewClick={handlePreviewClick}
+                />
+              ))}
+            </div>
+            {hasMoreMobile && (
+              <div className="skills-preview-show-more-wrap">
+                <button
+                  type="button"
+                  className="skills-preview-show-more"
+                  onClick={showMoreMobile}
+                >
+                  Show more
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <div className="skills-preview-carousel">
             <button
               type="button"
               className="skills-preview-arrow skills-preview-arrow--prev"
               onClick={goPrev}
+              disabled={pageIndex === 0}
               aria-label="Previous designs"
             />
             <div className="skills-preview-viewport">
@@ -137,6 +175,7 @@ function SkillsPreview() {
               type="button"
               className="skills-preview-arrow skills-preview-arrow--next"
               onClick={goNext}
+              disabled={pageIndex === totalPages - 1}
               aria-label="Next designs"
             />
           </div>
