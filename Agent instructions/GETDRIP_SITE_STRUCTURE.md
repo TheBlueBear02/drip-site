@@ -243,13 +243,14 @@ SkillSwitcherStrip   ← PERSISTENT across all pages
   └── Clicking a chip transforms the entire site
 
 Hero
-  └── Default / other skills: simple layout — radial gradient background, no card, CopyCommand + "Browse Skills" (accent pill)
+  └── Default / other skills: simple layout — radial gradient background, no card, "Try now:" + CopyCommand
   └── Playful Geometric only (when that skill is active or previewed): geometric shapes + card + pill with hover lift
   └── Clay Premium only (when that skill is active or previewed): 4 floating blurred blobs using --site-hero-shape-1..4, clay-float keyframes (respects prefers-reduced-motion)
-  └── Eyebrow: "Design system skills for AI agents"
+  └── Eyebrow: "CURE THE \"DEFAULT UI\" LOOK"
   └── Headline: one line, large, accent word styled
   └── Subheadline: 1-2 sentences
-  └── CopyCommand pill + "Browse Skills" (style depends on skill: simple accent button vs secondary pill with lift)
+  └── "Try now:" label above CopyCommand pill (command varies by active/preview skill)
+  └── "100% free" at bottom of hero content
   └── Playful variant: shape colors --site-hero-shape-1..4, float animation (respects prefers-reduced-motion)
   └── Neo-Brutalism variant: halftone background, bordered hero card (4px border, hard shadow, lift on hover)
 

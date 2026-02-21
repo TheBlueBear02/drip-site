@@ -62,11 +62,12 @@ function Hero() {
       Drop a complete design system into your project with one command and get back to vibe coding.
       </p>
       <div className="hero-cta-group">
+        <p className="hero-try-label">Apply style with:</p>
         <div className="hero-command">
           <CopyCommand command={defaultCommand} size="lg" />
         </div>
-
       </div>
+      <p className="hero-free">100% style, 100% free</p>
     </>
   );
 
