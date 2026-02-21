@@ -182,6 +182,33 @@
   box-shadow: var(--site-shadow-lg);
 }
 
+/* ── Neo-Brutalism only: halftone texture + bordered card with hard shadow ── */
+.hero--neo-brutalism {
+  background-image: radial-gradient(#000 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  background-color: var(--site-hero-bg);
+}
+
+.hero--neo-brutalism .hero-card {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 40px 56px;
+  background-color: var(--site-surface);
+  border: 4px solid var(--site-border);
+  border-radius: 0;
+  box-shadow: var(--site-shadow-md);
+  transition:
+    transform var(--site-duration-md) var(--site-ease),
+    box-shadow var(--site-duration-md) var(--site-ease);
+}
+
+.hero--neo-brutalism .hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--site-shadow-lg);
+}
+
 /* ── Clay Premium only: floating blobs (use --site-hero-shape-* for colors) ── */
 .hero--clay-premium .hero-blobs {
   position: absolute;

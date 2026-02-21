@@ -175,7 +175,10 @@ getdrip-site/
 │   │   │   ├── playful-geometric/
 │   │   │   │   ├── theme.js
 │   │   │   │   └── meta.js
-│   │   │   └── clay-premium/
+│   │   │   ├── clay-premium/
+│   │   │   │   ├── theme.js
+│   │   │   │   └── meta.js
+│   │   │   └── neo-brutalism/       ← Cream canvas, hard shadows, Space Grotesk, bordered card hero
 │   │   │       ├── theme.js
 │   │   │       └── meta.js
 │   │
@@ -248,6 +251,7 @@ Hero
   └── Subheadline: 1-2 sentences
   └── CopyCommand pill + "Browse Skills" (style depends on skill: simple accent button vs secondary pill with lift)
   └── Playful variant: shape colors --site-hero-shape-1..4, float animation (respects prefers-reduced-motion)
+  └── Neo-Brutalism variant: halftone background, bordered hero card (4px border, hard shadow, lift on hover)
 
 HowItWorks          ← 4 steps
   └── Step 1: Browse the skill library
@@ -514,7 +518,7 @@ When a new skill is added to the Drip library, adding it to the site is 2 files:
 1. **`src/skills/registered/[skill-name]/theme.js`** — token map (CSS vars)
 2. **`src/skills/registered/[skill-name]/meta.js`** — name, category, mood, components list, description
 
-Then import and register it in `src/skills/index.js`. Some skills (e.g. playful-geometric, clay-premium) have optional Hero variants: add a conditional in `Hero.jsx` and matching styles in `Hero.css` when the skill needs blobs, cards, or other layout-specific treatment.
+Then import and register it in `src/skills/index.js`. Some skills (e.g. playful-geometric, clay-premium, neo-brutalism) have optional Hero variants: add a conditional in `Hero.jsx` and matching styles in `Hero.css` when the skill needs blobs, cards, texture, or other layout-specific treatment.
 
 The skill card, the detail page, the switcher strip — all generated automatically.
 
