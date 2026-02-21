@@ -146,12 +146,7 @@
   }
   
   .nav-stars {
-    padding: 6px 10px;
-    font-size: 13px;
-  }
-  
-  .nav-stars-icon {
-    font-size: 14px;
+    display: none;
   }
   
   .nav-cta {

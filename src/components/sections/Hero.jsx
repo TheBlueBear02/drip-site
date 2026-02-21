@@ -58,7 +58,7 @@ function Hero() {
         {!typingDone && <span className="hero-headline-cursor" aria-hidden="true">|</span>}
       </h1>
       <p className="hero-subheadline">
-       Drop fully realized design system into your vibe coding workflow with exactly one line.
+      Drop a complete design system into your project with one command and get back to vibe coding.
       </p>
       <div className="hero-cta-group">
         <div className="hero-command">

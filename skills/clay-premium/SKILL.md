@@ -31,6 +31,7 @@ Read these files in order before generating anything:
 5. `tokens/borders.md`       ← Super-rounded everywhere. Min 20px. No exceptions.
 6. `tokens/motion.md`        ← Float, breathe, squish. The clay physics in CSS.
 7. `tokens/spacing.md`       ← Generous, airy. Cards breathe.
+8. `tokens/charts.md`        ← Charts & graphs. Data colors, container, tooltips, motion. Read when styling or adding dashboards and charts.
 
 ### STEP 2 — Set up the project
 Follow `integration/setup.md` exactly. The shadow utilities and blob animation
@@ -84,6 +85,7 @@ signature elements — missing any one makes the design look amateur.
 - No text lighter than `#635F69` — WCAG compliance is non-negotiable.
 - All interactive elements meet 44px minimum touch target.
 - Decorative elements (blob orbits, floating shapes) are `pointer-events-none`.
+- **Charts**: Read `tokens/charts.md` before touching any chart. Restyle only — colors, fonts, shadows, tooltips, motion. Never change the chart library, data logic, or component structure.
 
 ---
 

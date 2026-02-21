@@ -222,6 +222,15 @@
   color: var(--site-bg);
 }
 
+/* Mobile: gallery view (single column, no carousel) */
+.skills-preview-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 0 4px;
+  max-width: 100%;
+}
+
 @media (max-width: 768px) {
   .skills-preview {
     padding: 80px 0;

@@ -19,15 +19,22 @@ const platforms = [
     logoLightBg: `${LOGOS_BASE}/cursor logo.png`,
   },
   {
-    name: 'Base44',
-    logoDarkBg: `${LOGOS_BASE}/Base44-Dark-Mode-New.avif`,
-    logoLightBg: `${LOGOS_BASE}/base44-logo_brandlogos.net_sum8k-scaled.png`,
+    name: 'OpenAI',
+    logoDarkBg: `${LOGOS_BASE}/OpenAI-white-wordmark.svg`,
+    logoLightBg: `${LOGOS_BASE}/OpenAI-black-wordmark.svg`,
   },
+  
   {
     name: 'Claude Code',
     logoDarkBg: `${LOGOS_BASE}/claude%20logo%20for%20dark%20mode.png`,
     logoLightBg: `${LOGOS_BASE}/Claude_Logo_2023-s1280.png`,
   },
+  {
+    name: 'Base44',
+    logoDarkBg: `${LOGOS_BASE}/Base44-Dark-Mode-New.avif`,
+    logoLightBg: `${LOGOS_BASE}/base44-logo_brandlogos.net_sum8k-scaled.png`,
+  }
+
 ];
 
 function PlatformSupport({ lightBg: lightBgProp }) {
