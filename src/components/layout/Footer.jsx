@@ -6,7 +6,7 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-links">
-            <a href="https://github.com/getdrip" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/TheBlueBear02/drip-cli" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
             <a href="https://www.npmjs.com/package/getdrip" target="_blank" rel="noopener noreferrer">

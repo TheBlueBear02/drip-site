@@ -6,17 +6,22 @@ const FAQ_ITEMS = [
   {
     id: 'what-is',
     question: 'What is getDRIP?',
-    answer: 'getDRIP is a library of design system skills for AI coding agents. Each skill gives your agent a complete visual language—colors, typography, shadows, and components—so the UIs it generates match a specific aesthetic instead of generic defaults.',
+    answer: 'getDRIP is a library of "skills" designed for AI agents. A skill is not just a theme; it is a complete design language for your project, structured as a folder of files that teaches an AI agent how to think, decide, and build within a specific visual world. When you add a skill, the agent internalizes it to ensure every component it generates feels native to that world.',
+  },
+  {
+    id: 'why not',
+    question: 'Why not use a design prompt instead?',
+    answer: 'Simple prompts often lead to "Default UI" looks because agents lack a deep understanding of consistent design logic. While a prompt might describe a specific element, a getDRIP skill provides a comprehensive philosophy, defined design tokens (like colors, shadows, and typography), and reference patterns. This ensures that even when an agent builds something new, it follows the project\'s design principles and rules that keep the aesthetic cohesive.'
   },
   {
     id: 'how-add',
-    question: 'How do I add a skill to my project?',
+    question: 'How do I add a design to my project?',
     answer: 'Copy the npx command for the skill you want (e.g. npx getdrip add minimalist-monochrome), paste it into your agent\'s chat, and run it in your project. The skill is installed locally and your agent applies that design system to the code it generates.',
   },
   {
     id: 'platforms',
     question: 'Which AI platforms are supported?',
-    answer: 'getDRIP works with Cursor, Lovable, Bolt, Claude Code, Base44, and other agents that can run CLI commands and use project files. No special integration is required—just run the command where your agent can see the output.',
+    answer: 'getDRIP works with Cursor, Lovable, Codex, Claude Code, Base44, and other vibe coding platforms that build react projects. No special integration is required, just run the command and let the agent do the rest.',
   },
   {
     id: 'account',
@@ -26,7 +31,7 @@ const FAQ_ITEMS = [
   {
     id: 'multiple-skills',
     question: 'Can I use more than one skill in a project?',
-    answer: 'Each project typically uses one skill at a time so the UI stays consistent. You can switch skills by running a different npx getdrip add [skill-name] command; the new skill replaces the previous one for that project.',
+    answer: 'Each project typically uses one skill at a time so the UI stays consistent. You can switch skills by running a different npx getdrip add [skill-name] command. Or use the npx getdrip remove command to remove the skill from the project.',
   },
 ];
 
