@@ -16,6 +16,7 @@ const PREVIEW_IMAGES = {
   'minimalist-monochrome': 'minimalist-monochrome.png',
   'playful-geometric': 'playful-geomtric.png',
   'neo-brutalism': 'neo-brutalism.png',
+  'hand-drawn': 'hand-drawn.png',
 };
 
 function useIsMobile() {

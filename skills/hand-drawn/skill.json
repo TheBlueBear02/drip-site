@@ -1,0 +1,49 @@
+{
+  "name": "hand-drawn",
+  "version": "1.0.0",
+  "description": "Authentic imperfection and human touch. Wobbly multi-value border-radius, hard zero-blur offset shadows, Kalam marker headings, Patrick Hand body, dot-grid paper texture, tape and tack decorations, and the press-flat button mechanic. Spontaneous, creative, playful.",
+  "category": "playful",
+  "mood": ["sketchy", "creative", "human", "approachable", "spontaneous", "playful"],
+  "stack": ["react", "tailwind"],
+  "dependencies": {
+    "lucide-react": "^0.263.0"
+  },
+  "author": "getdrip",
+  "preview": "https://getdrip.dev/skills/hand-drawn",
+  "docs": "https://getdrip.dev/docs/hand-drawn",
+  "tags": [
+    "hand-drawn", "sketchy", "wobbly", "playful", "creative",
+    "paper", "doodle", "imperfect", "human", "marker",
+    "sticky-note", "notebook", "kalam"
+  ],
+  "palette": {
+    "background": "#fdfbf7",
+    "foreground": "#2d2d2d",
+    "muted":      "#e5e0d8",
+    "accent":     "#ff4d4d",
+    "secondary":  "#2d5da1",
+    "postit":     "#fff9c4"
+  },
+  "fonts": {
+    "heading": "Kalam",
+    "body":    "Patrick Hand"
+  },
+  "signature_traits": [
+    "Multi-value wobbly border-radius (255px 15px 225px 15px / 15px 225px 15px 255px)",
+    "Hard zero-blur offset shadows (4px 4px 0px 0px #2d2d2d)",
+    "Button press-flat: hover=2px shadow+translate, active=no shadow+full translate",
+    "Dot-grid paper texture on all section backgrounds",
+    "Kalam 700 on all headings — thick marker energy",
+    "Patrick Hand 400 on all body — legible but human",
+    "Card rotation at rest (alternating ±1–2deg)",
+    "Jiggle on hover (±1deg shift at 100ms linear)",
+    "Tape strip decoration on cards (translucent gray rotated rectangle)",
+    "Thumbtack decoration on cards (red circle)",
+    "SVG hand-drawn squiggle connecting How It Works steps",
+    "SVG hand-drawn arrow annotation near hero CTA",
+    "Post-it yellow (#fff9c4) for feature highlight cards",
+    "Stat shapes: organic blob border-radius not circles",
+    "Warm paper #fdfbf7 background (never pure white)",
+    "Pencil lead #2d2d2d text (never pure black)"
+  ]
+}

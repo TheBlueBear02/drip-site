@@ -1,0 +1,131 @@
+/* ============================================================
+   HAND-DRAWN SKILL — globals.css
+   ============================================================ */
+
+/* ── FONT IMPORT ──────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Patrick+Hand&display=swap');
+
+/* ── CSS VARIABLES ────────────────────────────────────────── */
+:root {
+  --color-bg:        #fdfbf7;
+  --color-fg:        #2d2d2d;
+  --color-muted:     #e5e0d8;
+  --color-accent:    #ff4d4d;
+  --color-secondary: #2d5da1;
+  --color-postit:    #fff9c4;
+  --color-white:     #ffffff;
+
+  --shadow-xs: 2px 2px 0px 0px #2d2d2d;
+  --shadow-md: 4px 4px 0px 0px #2d2d2d;
+  --shadow-lg: 6px 6px 0px 0px #2d2d2d;
+  --shadow-xl: 8px 8px 0px 0px #2d2d2d;
+  --shadow-soft: 3px 3px 0px 0px rgba(45,45,45,0.1);
+}
+
+/* ── BASE RESET ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: 'Patrick Hand', cursive;
+  /* DOT GRID — The notebook paper texture. MANDATORY. */
+  background-image: radial-gradient(#e5e0d8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  color: var(--color-fg);
+}
+
+/* ── SELECTION ────────────────────────────────────────────── */
+::selection {
+  background: var(--color-postit);
+  color: var(--color-fg);
+}
+
+/* ── FOCUS ────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
+/* ── SCROLLBAR ────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 10px; }
+::-webkit-scrollbar-track  { background: var(--color-bg); }
+::-webkit-scrollbar-thumb  { background: var(--color-muted); border: 2px solid var(--color-bg); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-fg); }
+
+/* ── SHADOW UTILITIES ──────────────────────────────────────── */
+.shadow-hand-xs   { box-shadow: var(--shadow-xs); }
+.shadow-hand-md   { box-shadow: var(--shadow-md); }
+.shadow-hand-lg   { box-shadow: var(--shadow-lg); }
+.shadow-hand-xl   { box-shadow: var(--shadow-xl); }
+.shadow-hand-soft { box-shadow: var(--shadow-soft); }
+
+/* ── ANIMATIONS ─────────────────────────────────────────────── */
+
+@keyframes hand-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-hand-bounce { animation: hand-bounce 3s ease-in-out infinite; }
+
+@keyframes hand-wobble {
+  0%, 100% { transform: rotate(-2deg); }
+  50%       { transform: rotate(2deg); }
+}
+.animate-hand-wobble { animation: hand-wobble 4s ease-in-out infinite; }
+
+@keyframes hand-fade-up {
+  from { opacity: 0; transform: translateY(12px) rotate(1deg); }
+  to   { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+.animate-hand-fade-up { animation: hand-fade-up 0.3s linear both; }
+
+/* ── TAPE DECORATION ──────────────────────────────────────── */
+.decor-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 64px;
+  height: 24px;
+  background: rgba(200, 200, 200, 0.35);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+/* ── TACK DECORATION ──────────────────────────────────────── */
+.decor-tack {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff4d4d;
+  border: 3px solid #2d2d2d;
+  pointer-events: none;
+}
+
+/* ── DASHED DIVIDER ───────────────────────────────────────── */
+.divider-dashed {
+  border: none;
+  border-top: 2px dashed var(--color-muted);
+  margin: 32px 0;
+}
+
+/* ── REDUCED MOTION ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-hand-bounce,
+  .animate-hand-wobble,
+  .animate-hand-fade-up {
+    animation: none !important;
+  }
+}

@@ -74,6 +74,12 @@ body {
   line-height: 1.6;
 }
 
+/* Hand-drawn skill: dot-grid paper texture (mandatory for this skill) */
+html[data-skill="hand-drawn"] body {
+  background-image: radial-gradient(#e5e0d8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 html {
   background-color: var(--site-bg);
   scroll-behavior: smooth;

@@ -13,6 +13,11 @@
   font-family: var(--site-font-head);
 }
 
+/* Hand-drawn style only: white title for contrast */
+html[data-skill="hand-drawn"] .skills-preview-title {
+  color: #ffffff;
+}
+
 /* Carousel: 3 cards per view, left/right arrows */
 .skills-preview-carousel {
   position: relative;

@@ -14,12 +14,16 @@ import { clayPremiumMeta } from './registered/clay-premium/meta';
 import { neoBrutalismTheme } from './registered/neo-brutalism/theme';
 import { neoBrutalismMeta } from './registered/neo-brutalism/meta';
 
+import { handDrawnTheme } from './registered/hand-drawn/theme';
+import { handDrawnMeta } from './registered/hand-drawn/meta';
+
 export const skillThemes = {
   'linear-modern': linearModernTheme,
   'minimalist-monochrome': minimalistMonochromeTheme,
   'playful-geometric': playfulGeometricTheme,
   'clay-premium': clayPremiumTheme,
   'neo-brutalism': neoBrutalismTheme,
+  'hand-drawn': handDrawnTheme,
 };
 
 export const skillMetas = {
@@ -28,6 +32,7 @@ export const skillMetas = {
   'playful-geometric': playfulGeometricMeta,
   'clay-premium': clayPremiumMeta,
   'neo-brutalism': neoBrutalismMeta,
+  'hand-drawn': handDrawnMeta,
 };
 
 // Ordered list for the SkillSwitcherStrip and Skills page grid (linear-modern is the site default)
@@ -37,4 +42,5 @@ export const skillList = [
   minimalistMonochromeMeta,
   playfulGeometricMeta,
   neoBrutalismMeta,
+  handDrawnMeta,
 ];

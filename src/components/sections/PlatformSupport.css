@@ -53,19 +53,13 @@
   object-fit: contain;
 }
 
-/* Stack both logo variants in the same spot; one visible at a time */
 .platform-support-logo {
   position: absolute;
   inset: 0;
   margin: auto;
 }
 
-/* Default (dark bg): show dark-mode logos, hide black logos */
-.platform-support-logo--light-bg {
-  display: none;
-}
-
-/* Light bg section: show black logos, hide dark-mode logos */
+/* Light-bg section styling (when skill has light/colorful category) */
 .platform-support--light {
   background-color: var(--platform-support-light-bg, #f5f5f5);
 }
@@ -77,14 +71,6 @@
 
 .platform-support--light .platform-support-subtitle {
   color: var(--platform-support-light-text-muted, #555);
-}
-
-.platform-support--light .platform-support-logo--dark-bg {
-  display: none;
-}
-
-.platform-support--light .platform-support-logo--light-bg {
-  display: block;
 }
 
 @media (max-width: 768px) {

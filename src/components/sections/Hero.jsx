@@ -17,6 +17,7 @@ function Hero() {
   const isPlayfulGeometric = resolvedSkillId === 'playful-geometric';
   const isClayPremium = resolvedSkillId === 'clay-premium';
   const isNeoBrutalism = resolvedSkillId === 'neo-brutalism';
+  const isHandDrawn = resolvedSkillId === 'hand-drawn';
 
   const [headlineVisibleLength, setHeadlineVisibleLength] = useState(0);
   const [typingDone, setTypingDone] = useState(false);
@@ -74,7 +75,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className={`hero ${isPlayfulGeometric ? 'hero--playful-geometric' : ''} ${isClayPremium ? 'hero--clay-premium' : ''} ${isNeoBrutalism ? 'hero--neo-brutalism' : ''}`}
+      className={`hero ${isPlayfulGeometric ? 'hero--playful-geometric' : ''} ${isClayPremium ? 'hero--clay-premium' : ''} ${isNeoBrutalism ? 'hero--neo-brutalism' : ''} ${isHandDrawn ? 'hero--hand-drawn' : ''}`}
     >
       {isClayPremium && (
         <div className="hero-blobs" aria-hidden="true">
@@ -97,10 +98,10 @@ function Hero() {
         </div>
       )}
 
-      {!isPlayfulGeometric && !isClayPremium && !isNeoBrutalism && <div className="hero-background" />}
+      {!isPlayfulGeometric && !isClayPremium && !isNeoBrutalism && !isHandDrawn && <div className="hero-background" />}
 
       <div className="container">
-        {isPlayfulGeometric || isNeoBrutalism ? (
+        {isPlayfulGeometric || isNeoBrutalism || isHandDrawn ? (
           <div className="hero-card">
             <div className="hero-content">{content}</div>
           </div>

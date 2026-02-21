@@ -21,8 +21,12 @@ export function useSkillTheme() {
   useEffect(() => {
     if (!resolvedTheme) return;
 
-    // Apply all CSS custom properties to :root
     const root = document.documentElement;
+
+    // Data attribute for skill-specific CSS (e.g. hand-drawn dot-grid)
+    root.dataset.skill = resolvedTheme.id || '';
+
+    // Apply all CSS custom properties to :root
     Object.entries(resolvedTheme.tokens).forEach(([key, value]) => {
       root.style.setProperty(key, value);
     });

@@ -6,35 +6,13 @@ const LOGOS_BASE = `${import.meta.env.BASE_URL}platforms%20logos`;
 
 const DEFAULT_SKILL = 'linear-modern';
 
-// Dark bg = use light/dark-mode logos. Light bg = use black logos.
+// Always use light-mode logos (dark/black variants for light backgrounds).
 const platforms = [
-  {
-    name: 'Lovable',
-    logoDarkBg: `${LOGOS_BASE}/lovable-light-png.png`,
-    logoLightBg: `${LOGOS_BASE}/lovable-dark-png.png`,
-  },
-  {
-    name: 'Cursor',
-    logoDarkBg: `${LOGOS_BASE}/cursor logo for darkmode.png`,
-    logoLightBg: `${LOGOS_BASE}/cursor logo.png`,
-  },
-  {
-    name: 'OpenAI',
-    logoDarkBg: `${LOGOS_BASE}/OpenAI-white-wordmark.svg`,
-    logoLightBg: `${LOGOS_BASE}/OpenAI-black-wordmark.svg`,
-  },
-  
-  {
-    name: 'Claude Code',
-    logoDarkBg: `${LOGOS_BASE}/claude%20logo%20for%20dark%20mode.png`,
-    logoLightBg: `${LOGOS_BASE}/Claude_Logo_2023-s1280.png`,
-  },
-  {
-    name: 'Base44',
-    logoDarkBg: `${LOGOS_BASE}/Base44-Dark-Mode-New.avif`,
-    logoLightBg: `${LOGOS_BASE}/base44-logo_brandlogos.net_sum8k-scaled.png`,
-  }
-
+  { name: 'Lovable', logo: `${LOGOS_BASE}/lovable-dark-png.png` },
+  { name: 'Cursor', logo: `${LOGOS_BASE}/cursor logo.png` },
+  { name: 'OpenAI', logo: `${LOGOS_BASE}/OpenAI-black-wordmark.svg` },
+  { name: 'Claude Code', logo: `${LOGOS_BASE}/Claude_Logo_2023-s1280.png` },
+  { name: 'Base44', logo: `${LOGOS_BASE}/base44-logo_brandlogos.net_sum8k-scaled.png` },
 ];
 
 function PlatformSupport({ lightBg: lightBgProp }) {
@@ -58,14 +36,9 @@ function PlatformSupport({ lightBg: lightBgProp }) {
           {platforms.map((platform) => (
             <div key={platform.name} className="platform-support-item">
               <img
-                src={platform.logoDarkBg}
+                src={platform.logo}
                 alt={platform.name}
-                className="platform-support-logo platform-support-logo--dark-bg"
-              />
-              <img
-                src={platform.logoLightBg}
-                alt={platform.name}
-                className="platform-support-logo platform-support-logo--light-bg"
+                className="platform-support-logo"
               />
             </div>
           ))}

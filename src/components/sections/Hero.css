@@ -209,6 +209,28 @@
   box-shadow: var(--site-shadow-lg);
 }
 
+/* ── Hand-drawn only: wobbly card, hard offset shadow, slight rotation ── */
+.hero--hand-drawn .hero-card {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 40px 56px;
+  background-color: var(--site-surface);
+  border: 2px solid var(--site-border);
+  border-radius: var(--site-radius-lg);
+  box-shadow: var(--site-shadow-md);
+  transform: rotate(-1deg);
+  transition:
+    transform var(--site-duration-sm) var(--site-ease),
+    box-shadow var(--site-duration-sm) var(--site-ease);
+}
+
+.hero--hand-drawn .hero-card:hover {
+  transform: rotate(-0.5deg) translateY(-2px);
+  box-shadow: var(--site-shadow-lg);
+}
+
 /* ── Clay Premium only: floating blobs (use --site-hero-shape-* for colors) ── */
 .hero--clay-premium .hero-blobs {
   position: absolute;
