@@ -12,7 +12,7 @@ function Navigation() {
                     <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
                         <Link to="/skills">Skills</Link>
                         <Link to="/docs">Docs</Link>
-                        <Link to="/skills" className="btn-primary">Browse Skills</Link>
+                        <Link to="/skills" className="btn-primary">Browse designs</Link>
                     </div>
                     <button 
                         className="mobile-menu-toggle" 

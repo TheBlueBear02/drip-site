@@ -67,7 +67,7 @@ function Nav() {
               </span>
             </a>
             <a href="#skills" onClick={(e) => handleScrollTo(e, 'skills')} className="nav-cta">
-              Browse Skills
+              Browse Designs
             </a>
           </div>
         </div>

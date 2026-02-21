@@ -212,7 +212,7 @@ getdrip-site/
 │       ├── components.css          ← Shared component styles (using vars)
 │       └── transitions.css         ← Root transition, theme-swap animation
 │
-├── index.html
+├── index.html                      ← Meta tags (description, og:, twitter:), theme-color
 ├── vite.config.js                  ← base: '/repo-name/' for GitHub Pages
 ├── .github/
 │   └── workflows/
