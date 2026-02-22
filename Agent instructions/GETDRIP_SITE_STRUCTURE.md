@@ -268,9 +268,11 @@ SkillsPreview       ← 3-4 skill cards teaser
   └── Each card shows skill name, mood tags, command
   └── Hovering a card applies that skill as a preview
   └── Clicking navigates to /skills/skill-name
+  └── linear-modern: skill cards use a light border (rgba(255,255,255,0.12))
 
 PlatformSupport
   └── Supported platforms (Cursor, Lovable, Base44, Claude Code, etc.)
+  └── Logo variant by skill: linear-modern uses dark-mode (light/white) logos; other skills use light-bg (dark/black) logos
 
 FAQ                 ← Questions & Answers (accordion)
   └── Clickable question containers; on click the answer section opens below
@@ -284,6 +286,7 @@ Footer
 - Click = locked active skill (persists until another is clicked)
 - "Linear Modern" chip is the default; clicking it resets to the default style
 - Strip is sticky at the top below the Nav
+- linear-modern: strip and chip buttons use a light border (rgba(255,255,255,0.12)); active chip keeps accent border
 
 ---
 

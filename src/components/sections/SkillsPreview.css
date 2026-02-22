@@ -109,6 +109,11 @@ html[data-skill="hand-drawn"] .skills-preview-title {
   padding: 14px;
 }
 
+/* Linear modern: light border on cards */
+.skills-preview--linear-modern .skills-preview-card {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
 /* Playful geometric: same shadow as hero card */
 .skills-preview--playful-geometric .skills-preview-card {
   box-shadow: var(--site-shadow-md);

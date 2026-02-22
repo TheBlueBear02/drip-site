@@ -6,6 +6,15 @@
   padding: 6px 0;
 }
 
+/* Linear modern: light border on strip and chip buttons */
+html[data-skill="linear-modern"] .skill-switcher-strip {
+  border-top-color: rgba(255, 255, 255, 0.12);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+html[data-skill="linear-modern"] .skill-chip {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
 
 .skill-switcher-scroll {
   display: flex;

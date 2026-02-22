@@ -6,13 +6,22 @@ const LOGOS_BASE = `${import.meta.env.BASE_URL}platforms%20logos`;
 
 const DEFAULT_SKILL = 'linear-modern';
 
-// Always use light-mode logos (dark/black variants for light backgrounds).
-const platforms = [
+// Logos for light backgrounds (dark/black variants).
+const platformsLightBg = [
   { name: 'Lovable', logo: `${LOGOS_BASE}/lovable-dark-png.png` },
   { name: 'Cursor', logo: `${LOGOS_BASE}/cursor logo.png` },
   { name: 'OpenAI', logo: `${LOGOS_BASE}/OpenAI-black-wordmark.svg` },
   { name: 'Claude Code', logo: `${LOGOS_BASE}/Claude_Logo_2023-s1280.png` },
   { name: 'Base44', logo: `${LOGOS_BASE}/base44-logo_brandlogos.net_sum8k-scaled.png` },
+];
+
+// Logos for dark backgrounds (light/white variants) — used by linear-modern.
+const platformsDarkBg = [
+  { name: 'Lovable', logo: `${LOGOS_BASE}/lovable-light-png.png` },
+  { name: 'Cursor', logo: `${LOGOS_BASE}/cursor logo for darkmode.png` },
+  { name: 'OpenAI', logo: `${LOGOS_BASE}/OpenAI-white-wordmark.svg` },
+  { name: 'Claude Code', logo: `${LOGOS_BASE}/claude logo for dark mode.png` },
+  { name: 'Base44', logo: `${LOGOS_BASE}/Base44-Dark-Mode-New.avif` },
 ];
 
 function PlatformSupport({ lightBg: lightBgProp }) {
@@ -21,6 +30,8 @@ function PlatformSupport({ lightBg: lightBgProp }) {
   const meta = skillMetas[resolvedId];
   const lightBg =
     lightBgProp ?? (meta?.category === 'light' || meta?.category === 'colorful');
+  const useDarkBgLogos = resolvedId === 'linear-modern';
+  const platforms = useDarkBgLogos ? platformsDarkBg : platformsLightBg;
 
   return (
     <section

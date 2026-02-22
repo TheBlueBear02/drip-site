@@ -86,6 +86,7 @@ function SkillsPreview() {
   const { setActiveSkill, activeSkill, previewSkill } = useSkillContext();
   const resolvedSkillId = previewSkill ?? activeSkill ?? 'linear-modern';
   const isPlayfulGeometric = resolvedSkillId === 'playful-geometric';
+  const isLinearModern = resolvedSkillId === 'linear-modern';
   const [pageIndex, setPageIndex] = useState(0);
   const [mobileVisibleCount, setMobileVisibleCount] = useState(MOBILE_INITIAL_CARDS);
   const isMobile = useIsMobile();
@@ -116,7 +117,7 @@ function SkillsPreview() {
   };
 
   return (
-    <section id="skills" className={`skills-preview ${isPlayfulGeometric ? 'skills-preview--playful-geometric' : ''}`}>
+    <section id="skills" className={`skills-preview ${isPlayfulGeometric ? 'skills-preview--playful-geometric' : ''} ${isLinearModern ? 'skills-preview--linear-modern' : ''}`}>
       <div className="container">
         <h2 className="skills-preview-title">Featured Designs</h2>
 

@@ -34,6 +34,10 @@
 }
 
 /* ── Playful geometric only: shapes + card ──────────────────────────────── */
+.hero--playful-geometric {
+  padding-top: 56px;
+}
+
 .hero--playful-geometric .hero-content {
   max-width: none;
 }
@@ -184,6 +188,7 @@
 
 /* ── Neo-Brutalism only: halftone texture + bordered card with hard shadow ── */
 .hero--neo-brutalism {
+  padding-top: 56px;
   background-image: radial-gradient(#000 1.5px, transparent 1.5px);
   background-size: 20px 20px;
   background-color: var(--site-hero-bg);
@@ -210,6 +215,10 @@
 }
 
 /* ── Hand-drawn only: wobbly card, hard offset shadow, slight rotation ── */
+.hero--hand-drawn {
+  padding-top: 56px;
+}
+
 .hero--hand-drawn .hero-card {
   position: relative;
   z-index: 1;
@@ -443,6 +452,12 @@
 @media (max-width: 768px) {
   .hero {
     padding: 72px 0 100px;
+  }
+
+  .hero--neo-brutalism,
+  .hero--hand-drawn,
+  .hero--playful-geometric {
+    padding-top: 48px;
   }
 
   .hero--playful-geometric .hero-card {
