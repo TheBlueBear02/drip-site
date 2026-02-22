@@ -80,6 +80,25 @@ html[data-skill="hand-drawn"] body {
   background-size: 24px 24px;
 }
 
+/* Art Deco skill: diagonal crosshatch gold texture (mandatory for this skill) */
+html[data-skill="art-deco"] body {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(212,175,55,0.04) 0px,
+      rgba(212,175,55,0.04) 1px,
+      transparent 1px,
+      transparent 24px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(212,175,55,0.04) 0px,
+      rgba(212,175,55,0.04) 1px,
+      transparent 1px,
+      transparent 24px
+    );
+}
+
 html {
   background-color: var(--site-bg);
   scroll-behavior: smooth;

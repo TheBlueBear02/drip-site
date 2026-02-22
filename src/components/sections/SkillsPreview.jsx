@@ -17,6 +17,7 @@ const PREVIEW_IMAGES = {
   'playful-geometric': 'playful-geomtric.png',
   'neo-brutalism': 'neo-brutalism.png',
   'hand-drawn': 'hand-drawn.png',
+  'art-deco': 'art deco.png',
 };
 
 function useIsMobile() {

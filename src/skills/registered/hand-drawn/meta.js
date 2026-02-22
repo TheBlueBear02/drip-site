@@ -9,5 +9,6 @@ export const handDrawnMeta = {
   stack: ['react', 'tailwind'],
   accentColor: '#ff4d4d',
   bgColor: '#fdfbf7',
+  darkBackground: false,   // Platform logos: use dark/black variants
   command: 'npx getdrip add hand-drawn',
 };

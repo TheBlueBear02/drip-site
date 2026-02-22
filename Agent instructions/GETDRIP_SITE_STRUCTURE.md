@@ -181,7 +181,10 @@ getdrip-site/
 │   │   │   ├── neo-brutalism/       ← Cream canvas, hard shadows, Space Grotesk, bordered card hero
 │   │   │   │   ├── theme.js
 │   │   │   │   └── meta.js
-│   │   │   └── hand-drawn/          ← Wobbly radius, hard shadows, Kalam + Patrick Hand, dot-grid, hero card
+│   │   │   ├── hand-drawn/          ← Wobbly radius, hard shadows, Kalam + Patrick Hand, dot-grid, hero card
+│   │   │   │   ├── theme.js
+│   │   │   │   └── meta.js
+│   │   │   └── art-deco/            ← Obsidian + gold, Marcellus + Josefin Sans, crosshatch body, gold glows, 0px radius
 │   │   │       ├── theme.js
 │   │   │       └── meta.js
 │   │
@@ -272,7 +275,7 @@ SkillsPreview       ← 3-4 skill cards teaser
 
 PlatformSupport
   └── Supported platforms (Cursor, Lovable, Base44, Claude Code, etc.)
-  └── Logo variant by skill: linear-modern uses dark-mode (light/white) logos; other skills use light-bg (dark/black) logos
+  └── Logo variant by skill: driven by meta.darkBackground. Dark themes (darkBackground: true) use light/white logos; light themes (darkBackground: false) use dark/black logos. When adding a new skill, set darkBackground in meta.js from the skill's primary background so platform logos stay readable.
 
 FAQ                 ← Questions & Answers (accordion)
   └── Clickable question containers; on click the answer section opens below
@@ -463,6 +466,16 @@ Content area
 // onClick on Preview → navigate + lock skill
 ```
 
+### `PlatformSupport.jsx`
+
+```jsx
+// Resolves active/preview skill from SkillContext; looks up meta from skillMetas.
+// Logo variant: meta.darkBackground === true → light/white logos (for dark themes);
+// meta.darkBackground === false (or unset) → dark/black logos (for light themes).
+// Assets live in public/platforms logos/ (two sets). When adding a new skill,
+// set darkBackground in meta.js from the skill's primary background so logos stay readable.
+```
+
 ---
 
 ## ROUTING SETUP (Hash Mode for GitHub Pages)
@@ -524,7 +537,7 @@ Push to `main` → auto-builds → deploys to `gh-pages` branch → live at
 When a new skill is added to the Drip library, adding it to the site is 2 files:
 
 1. **`src/skills/registered/[skill-name]/theme.js`** — token map (CSS vars)
-2. **`src/skills/registered/[skill-name]/meta.js`** — name, category, mood, components list, description
+2. **`src/skills/registered/[skill-name]/meta.js`** — name, category, mood, components list, description, and **`darkBackground`** (boolean). Set `darkBackground: true` for dark themes (primary background dark, e.g. black/charcoal) so the Platform Support section uses light/white logos; set `darkBackground: false` for light themes so it uses dark/black logos. This keeps platform logos readable on every style.
 
 Then import and register it in `src/skills/index.js`. Some skills (e.g. playful-geometric, clay-premium, neo-brutalism, hand-drawn) have optional Hero variants: add a conditional in `Hero.jsx` and matching styles in `Hero.css` when the skill needs blobs, cards, texture, or other layout-specific treatment. Skills that require a global body treatment (e.g. hand-drawn’s dot-grid paper) can use a `data-skill` attribute set by `useSkillTheme` on `document.documentElement` and target it in `base.css` (e.g. `html[data-skill="hand-drawn"] body { background-image: ... }`).
 

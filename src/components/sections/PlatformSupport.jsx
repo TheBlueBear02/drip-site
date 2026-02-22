@@ -6,7 +6,7 @@ const LOGOS_BASE = `${import.meta.env.BASE_URL}platforms%20logos`;
 
 const DEFAULT_SKILL = 'linear-modern';
 
-// Logos for light backgrounds (dark/black variants).
+// Logos for light backgrounds (dark/black variants). Use when meta.darkBackground === false.
 const platformsLightBg = [
   { name: 'Lovable', logo: `${LOGOS_BASE}/lovable-dark-png.png` },
   { name: 'Cursor', logo: `${LOGOS_BASE}/cursor logo.png` },
@@ -15,7 +15,7 @@ const platformsLightBg = [
   { name: 'Base44', logo: `${LOGOS_BASE}/base44-logo_brandlogos.net_sum8k-scaled.png` },
 ];
 
-// Logos for dark backgrounds (light/white variants) — used by linear-modern.
+// Logos for dark backgrounds (light/white variants). Use when meta.darkBackground === true.
 const platformsDarkBg = [
   { name: 'Lovable', logo: `${LOGOS_BASE}/lovable-light-png.png` },
   { name: 'Cursor', logo: `${LOGOS_BASE}/cursor logo for darkmode.png` },
@@ -30,7 +30,8 @@ function PlatformSupport({ lightBg: lightBgProp }) {
   const meta = skillMetas[resolvedId];
   const lightBg =
     lightBgProp ?? (meta?.category === 'light' || meta?.category === 'colorful');
-  const useDarkBgLogos = resolvedId === 'linear-modern';
+  // Dark-background themes use light/white logos; light-background themes use dark/black logos.
+  const useDarkBgLogos = meta?.darkBackground === true;
   const platforms = useDarkBgLogos ? platformsDarkBg : platformsLightBg;
 
   return (

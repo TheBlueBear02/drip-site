@@ -9,5 +9,6 @@ export const playfulGeometricMeta = {
   stack: ['react', 'tailwind', 'framer-motion', 'lucide-react'],
   accentColor: '#8B5CF6',
   bgColor: '#FFFDF5',
+  darkBackground: false,   // Platform logos: use dark/black variants
   command: 'npx getdrip add playful-geometric',
 };

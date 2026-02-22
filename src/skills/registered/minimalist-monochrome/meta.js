@@ -9,5 +9,6 @@ export const minimalistMonochromeMeta = {
   stack: ['react', 'tailwind'],
   accentColor: '#000000',
   bgColor: '#FFFFFF',
+  darkBackground: false,   // Platform logos: use dark/black variants
   command: 'npx getdrip add minimalist-monochrome',
 };

@@ -9,5 +9,6 @@ export const linearModernMeta = {
   stack: ['react', 'tailwind', 'framer-motion'],
   accentColor: '#5E6AD2',
   bgColor: '#050506',
+  darkBackground: true,   // Platform logos: use light/white variants
   command: 'npx getdrip add linear-modern',
 };

@@ -1,0 +1,52 @@
+{
+  "name": "art-deco",
+  "version": "1.0.0",
+  "description": "Opulence, mathematical precision, and architectural grandeur. Obsidian black with metallic gold, diagonal crosshatch texture, zero border-radius, Marcellus all-caps headings, rotated diamond icon containers, gold glows (never drop shadows), Roman numerals, and theatrical 500ms transitions. The Gatsby aesthetic.",
+  "category": "luxury",
+  "mood": ["opulent", "geometric", "theatrical", "timeless", "architectural", "exclusive"],
+  "stack": ["react", "tailwind"],
+  "dependencies": {
+    "lucide-react": "^0.263.0"
+  },
+  "author": "getdrip",
+  "preview": "https://getdrip.dev/skills/art-deco",
+  "docs": "https://getdrip.dev/docs/art-deco",
+  "tags": [
+    "art-deco", "luxury", "gatsby", "gold", "dark", "geometric",
+    "1920s", "vintage", "opulent", "architectural", "marcellus",
+    "theatrical", "premium", "exclusive", "heritage"
+  ],
+  "palette": {
+    "background":    "#0A0A0A",
+    "card":          "#141414",
+    "foreground":    "#F2F0E4",
+    "gold":          "#D4AF37",
+    "gold-pale":     "#F2E8C4",
+    "blue":          "#1E3D59",
+    "muted":         "#888888"
+  },
+  "fonts": {
+    "heading": "Marcellus",
+    "body":    "Josefin Sans"
+  },
+  "signature_traits": [
+    "border-radius: 0px everywhere — no exceptions",
+    "Gold glows: 0 0 Xpx rgba(212,175,55,Y) — never drop shadows",
+    "Diagonal crosshatch background texture — mandatory on all sections",
+    "Marcellus 400 + UPPERCASE + letter-spacing 0.2em on all headings",
+    "Josefin Sans 300 for all body text",
+    "Rotated diamond icon containers (rotate 45deg / counter-rotate -45deg)",
+    "Corner L-brackets on all cards (position: absolute, 2-sided border)",
+    "Gold divider lines flanking every section heading (gradient fade)",
+    "Roman numerals (I, II, III, IV) for steps and pricing tiers",
+    "Sunburst radial gradient in hero section",
+    "Thin gold gradient line at very top of navbar",
+    "Card border: rgba(212,175,55,0.2) at rest → #D4AF37 on hover",
+    "Card lift: translateY(-8px) at 500ms ease-out",
+    "Expanding gold rule on feature card hover (20px → 40px)",
+    "Lucide icons: strokeWidth={1} always",
+    "Social proof and numbering in Roman numerals in Marcellus",
+    "Obsidian black #0A0A0A background (never charcoal or generic dark gray)",
+    "Champagne cream #F2F0E4 text (never pure white)"
+  ]
+}

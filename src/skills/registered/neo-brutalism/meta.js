@@ -9,5 +9,6 @@ export const neoBrutalismMeta = {
   stack: ['react', 'tailwind'],
   accentColor: '#FF6B6B',
   bgColor: '#FFFDF5',
+  darkBackground: false,   // Platform logos: use dark/black variants
   command: 'npx getdrip add neo-brutalism',
 };

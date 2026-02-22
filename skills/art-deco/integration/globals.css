@@ -1,0 +1,171 @@
+/* ============================================================
+   ART DECO SKILL — globals.css
+   ============================================================ */
+
+/* ── FONT IMPORT ──────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Josefin+Sans:wght@300;400&display=swap');
+
+/* ── CSS VARIABLES ────────────────────────────────────────── */
+:root {
+  --color-bg:        #0A0A0A;
+  --color-card:      #141414;
+  --color-fg:        #F2F0E4;
+  --color-gold:      #D4AF37;
+  --color-gold-pale: #F2E8C4;
+  --color-blue:      #1E3D59;
+  --color-muted:     #888888;
+
+  --glow-xs:  0 0 8px rgba(212,175,55,0.15);
+  --glow-sm:  0 0 15px rgba(212,175,55,0.2);
+  --glow-md:  0 0 20px rgba(212,175,55,0.3);
+  --glow-lg:  0 0 25px rgba(212,175,55,0.4);
+  --glow-xl:  0 0 40px rgba(212,175,55,0.5);
+
+  --border-rest:  rgba(212,175,55,0.3);
+  --border-full:  #D4AF37;
+
+  --font-display: 'Marcellus', Georgia, serif;
+  --font-body:    'Josefin Sans', system-ui, sans-serif;
+}
+
+/* ── BASE ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.625;
+
+  /* MANDATORY: Diagonal crosshatch gold texture */
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(212,175,55,0.04) 0px,
+      rgba(212,175,55,0.04) 1px,
+      transparent 1px,
+      transparent 24px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(212,175,55,0.04) 0px,
+      rgba(212,175,55,0.04) 1px,
+      transparent 1px,
+      transparent 24px
+    );
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-fg);
+}
+
+/* ── SELECTION ────────────────────────────────────────────── */
+::selection {
+  background: rgba(212,175,55,0.25);
+  color: var(--color-gold);
+}
+
+/* ── FOCUS ────────────────────────────────────────────────── */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-gold), 0 0 0 4px var(--color-bg);
+}
+
+/* ── SCROLLBAR ────────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 6px; }
+::-webkit-scrollbar-track    { background: var(--color-bg); }
+::-webkit-scrollbar-thumb    { background: rgba(212,175,55,0.3); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+
+/* ── GLOW UTILITIES ───────────────────────────────────────── */
+.glow-xs { box-shadow: var(--glow-xs); }
+.glow-sm { box-shadow: var(--glow-sm); }
+.glow-md { box-shadow: var(--glow-md); }
+.glow-lg { box-shadow: var(--glow-lg); }
+.glow-xl { box-shadow: var(--glow-xl); }
+
+/* ── CORNER BRACKETS ──────────────────────────────────────── */
+.corner-brackets { position: relative; }
+.corner-brackets::before,
+.corner-brackets::after {
+  content: "";
+  position: absolute;
+  width: 16px; height: 16px;
+  border-color: var(--color-gold);
+  border-style: solid;
+  opacity: 0.5;
+  transition: opacity 300ms ease-out;
+  pointer-events: none;
+}
+.corner-brackets::before {
+  top: 8px; left: 8px;
+  border-width: 2px 0 0 2px;
+}
+.corner-brackets::after {
+  bottom: 8px; right: 8px;
+  border-width: 0 2px 2px 0;
+}
+.corner-brackets:hover::before,
+.corner-brackets:hover::after { opacity: 1; }
+
+/* ── DIAMOND CONTAINER ────────────────────────────────────── */
+.diamond-container {
+  transform: rotate(45deg);
+  border: 1px solid var(--color-gold);
+  background: rgba(212,175,55,0.06);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 300ms ease-out;
+}
+.diamond-container:hover {
+  background: rgba(212,175,55,0.15);
+  box-shadow: var(--glow-sm);
+}
+.diamond-inner { transform: rotate(-45deg); }
+
+/* ── SECTION DIVIDER ──────────────────────────────────────── */
+.section-heading {
+  display: flex; align-items: center; gap: 24px; justify-content: center;
+}
+.section-heading::before,
+.section-heading::after {
+  content: "";
+  height: 1px; width: 96px;
+  background: linear-gradient(to right, transparent, var(--color-gold));
+  opacity: 0.6;
+}
+.section-heading::after {
+  background: linear-gradient(to left, transparent, var(--color-gold));
+}
+
+/* ── ANIMATIONS ───────────────────────────────────────────── */
+@keyframes deco-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-deco-fade-up { animation: deco-fade-up 0.6s ease-out both; }
+
+@keyframes deco-glow-pulse {
+  0%, 100% { box-shadow: var(--glow-sm); }
+  50%       { box-shadow: var(--glow-lg); }
+}
+.animate-glow-pulse { animation: deco-glow-pulse 3s ease-in-out infinite; }
+
+/* Animation delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* ── REDUCED MOTION ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

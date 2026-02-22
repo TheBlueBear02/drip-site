@@ -185,6 +185,10 @@ export const [camelCaseSkillName]Meta = {
   accentColor: '',     // The skill's primary accent hex. Used for the swatch in the
                        // SkillSwitcherStrip chip. Pull from colors.md or globals.css.
   bgColor: '',         // The skill's background hex. Used for MiniPreview background.
+  darkBackground: true, // Platform logos: true = dark theme → use light/white logos;
+                       // false = light theme → use dark/black logos. Set from skill's
+                       // primary background (colors.md / --site-bg): dark (e.g. #0A0A0A)
+                       // → true; light (e.g. #FFFDF5, #FFFFFF) → false.
   command: '',         // The exact install command. Always: `npx getdrip add [id]`
 };
 ```
@@ -238,6 +242,15 @@ The **Featured Designs** section on the home page (`SkillsPreview`) shows a fixe
 
 The order of cards matches `skillList` in `src/skills/index.js`, so the new skill appears as the last featured card once the slice count is updated.
 
+### Step 6 — Set platform logo variant (dark vs light style)
+
+The **Platform Support** section shows partner logos (Cursor, Lovable, Claude Code, etc.). Logo assets live in `public/platforms logos/` in two variants:
+
+- **Dark-mode logos** (light/white): used when the skill has a **dark** background. Set `darkBackground: true` in `meta.js`.
+- **Light-mode logos** (dark/black): used when the skill has a **light** background. Set `darkBackground: false` in `meta.js`.
+
+When adding a new skill, decide from the skill's primary background (e.g. `tokens/colors.md` or `--site-bg`): if the page canvas is dark (e.g. `#0A0A0A`, `#050506`), use `darkBackground: true`; if light (e.g. `#FFFFFF`, `#FFFDF5`, `#F4F1FA`), use `darkBackground: false`. The `PlatformSupport` component reads `meta.darkBackground` and picks the correct logo set so logos stay readable on every style.
+
 ---
 
 ## VERIFICATION CHECKLIST
@@ -248,6 +261,7 @@ After generating both files, verify:
 - [ ] `fontUrl` is a valid Google Fonts URL (or empty string `''` if system fonts only)
 - [ ] `accentColor` in `meta.js` matches `--site-accent` in `theme.js`
 - [ ] `bgColor` in `meta.js` matches `--site-bg` in `theme.js`
+- [ ] `darkBackground` in `meta.js` is set from the skill's primary background: `true` if the page background is dark (e.g. black, charcoal), `false` if light (e.g. white, cream). This drives the Platform Support section logo variant (light/white logos on dark themes, dark/black logos on light themes).
 - [ ] `id` is identical in both `theme.js` and `meta.js`
 - [ ] `command` in `meta.js` is exactly `npx getdrip add [id]`
 - [ ] The skill is imported and registered in all 3 places in `index.js`
@@ -312,6 +326,7 @@ export const retroTerminalMeta = {
   stack: ['react', 'tailwind', 'framer-motion'],
   accentColor: '#00ff41',
   bgColor: '#000000',
+  darkBackground: true,   // Dark theme → Platform Support uses light/white logos
   command: 'npx getdrip add retro-terminal',
 };
 ```

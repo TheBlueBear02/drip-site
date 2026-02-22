@@ -9,5 +9,6 @@ export const clayPremiumMeta = {
   stack: ['react', 'tailwind'],
   accentColor: '#7C3AED',
   bgColor: '#F4F1FA',
+  darkBackground: false,   // Platform logos: use dark/black variants
   command: 'npx getdrip add clay-premium',
 };
