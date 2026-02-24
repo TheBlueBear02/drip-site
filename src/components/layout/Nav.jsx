@@ -60,7 +60,7 @@ function Nav() {
               className="nav-stars"
               aria-label={stars != null ? `${stars} stars on GitHub` : 'View on GitHub'}
             >
-              <span className="nav-stars-label">GitHub Stars</span>
+              <span className="nav-stars-label">GitHub</span>
               <span className="nav-stars-icon" aria-hidden>★</span>
               <span className="nav-stars-count">
                 {stars != null ? stars.toLocaleString() : '—'}

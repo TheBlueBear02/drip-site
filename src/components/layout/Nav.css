@@ -111,6 +111,11 @@
   background-color: var(--site-surface-2);
 }
 
+/* Linear Modern only: make GitHub pill border more visible */
+html[data-skill="linear-modern"] .nav-stars {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
 .nav-stars-icon {
   color: var(--site-accent);
   font-size: 16px;
