@@ -3,7 +3,7 @@
   align-items: center;
   gap: 12px;
   background-color: var(--site-surface);
-  border: 1px solid var(--site-border);
+  border: 2px solid var(--site-border);
   border-radius: var(--site-radius-full);
   padding: 12px 20px;
   font-family: var(--site-font-mono);

@@ -3,13 +3,15 @@ import { useSkillContext } from '../../context/SkillContext';
 import CopyCommand from '../ui/CopyCommand';
 import './Hero.css';
 
-const HERO_HEADLINE = 'Your AI App Works. Now Make It Look Good.';
+const HERO_LINE_1 = 'Your AI App Works';
+const HERO_LINE_2 = 'Now Give It Character';
+const HERO_HEADLINE = `${HERO_LINE_1} ${HERO_LINE_2}`;
 const TYPING_MS_PER_CHAR = 70;
 const SENTENCE_BREAK_MS = 1000;
 const CURSOR_BLINK_MS = 530;
-const FIRST_SENTENCE_END = HERO_HEADLINE.indexOf('.') + 1;
-const ACCENT_START = 31;   // start of "Look Good"
-const ACCENT_END = 41;     // end of "Look Good" (exclusive; period is at 40)
+const LINE_BREAK   = HERO_LINE_1.length;
+const ACCENT_START = LINE_BREAK + 1 + HERO_LINE_2.indexOf('Character');
+const ACCENT_END   = ACCENT_START + 'Character'.length;
 
 function Hero() {
   const { activeSkill, previewSkill } = useSkillContext();
@@ -36,7 +38,7 @@ function Hero() {
     }
 
     const delay =
-      headlineVisibleLength === FIRST_SENTENCE_END ? SENTENCE_BREAK_MS : TYPING_MS_PER_CHAR;
+      headlineVisibleLength === LINE_BREAK ? SENTENCE_BREAK_MS : TYPING_MS_PER_CHAR;
     const t = setTimeout(() => {
       setHeadlineVisibleLength((n) => Math.min(n + 1, HERO_HEADLINE.length));
     }, delay);
@@ -50,7 +52,9 @@ function Hero() {
     <>
       <p className="hero-eyebrow">CURE THE "DEFAULT UI" LOOK</p>
       <h1 className="hero-headline">
-        {HERO_HEADLINE.slice(0, Math.min(headlineVisibleLength, ACCENT_START))}
+        {HERO_HEADLINE.slice(0, Math.min(headlineVisibleLength, LINE_BREAK))}
+        {headlineVisibleLength > LINE_BREAK && <br />}
+        {headlineVisibleLength > LINE_BREAK && HERO_HEADLINE.slice(LINE_BREAK + 1, Math.min(headlineVisibleLength, ACCENT_START))}
         {headlineVisibleLength > ACCENT_START && (
           <span className="hero-headline-accent">
             {HERO_HEADLINE.slice(ACCENT_START, Math.min(headlineVisibleLength, ACCENT_END))}
@@ -60,15 +64,14 @@ function Hero() {
         {!typingDone && <span className="hero-headline-cursor" aria-hidden="true">|</span>}
       </h1>
       <p className="hero-subheadline">
-        Drop a complete design system into your project with one command and get back to vibe coding.
-      </p>
+      Use one command to inject a complete design system into your project and get back to vibe coding</p>
       <div className="hero-cta-group">
         <p className="hero-try-label">Apply style with:</p>
         <div className="hero-command">
           <CopyCommand command={defaultCommand} size="lg" />
         </div>
       </div>
-      <p className="hero-downloads"> Trusted by <span className="hero-downloads-count">519+</span> Vibe coders</p>
+      <p className="hero-downloads"> Trusted by <span className="hero-downloads-count">519+</span> vibe coders</p>
       <p className="hero-free">100% style, 100% free</p>
     </>
   );
