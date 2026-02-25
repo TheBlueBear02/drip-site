@@ -60,7 +60,7 @@ function Hero() {
         {!typingDone && <span className="hero-headline-cursor" aria-hidden="true">|</span>}
       </h1>
       <p className="hero-subheadline">
-      Drop a complete design system into your project with one command and get back to vibe coding.
+        Drop a complete design system into your project with one command and get back to vibe coding.
       </p>
       <div className="hero-cta-group">
         <p className="hero-try-label">Apply style with:</p>
@@ -68,6 +68,7 @@ function Hero() {
           <CopyCommand command={defaultCommand} size="lg" />
         </div>
       </div>
+      <p className="hero-downloads"> Trusted by <span className="hero-downloads-count">519+</span> Vibe coders</p>
       <p className="hero-free">100% style, 100% free</p>
     </>
   );

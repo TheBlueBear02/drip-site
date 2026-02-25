@@ -388,13 +388,28 @@
 }
 
 .hero-free {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--site-hero-text, var(--site-text-muted));
-  opacity: 0.85;
-  margin: 0;
+  opacity: 0.6;
+  margin: 6px 0 0;
   font-family: var(--site-font-body);
   text-align: center;
+}
+
+.hero-downloads {
+  margin: 10px 0 0;
+  font-size: 15px;
+  font-family: var(--site-font-body);
+  color: var(--site-hero-text, var(--site-text-muted));
+  opacity: 0.85;
+  text-align: center;
+}
+
+.hero-downloads-count {
+  font-weight: 700;
+  opacity: 1;
+  color: var(--site-accent);
 }
 
 /* Browse Skills: base button styles */
