@@ -7,10 +7,28 @@
   font-size: clamp(32px, 4vw, 48px);
   font-weight: 700;
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 16px;
   letter-spacing: -1px;
   color: var(--site-skills-title, var(--site-text));
   font-family: var(--site-font-head);
+}
+
+.skills-preview-subtitle {
+  text-align: center;
+  font-size: 17px;
+  color: var(--site-text-muted);
+  font-family: var(--site-font-body);
+  margin: 0 0 18px;
+}
+
+.skills-preview-subtitle-link {
+  color: var(--site-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skills-preview-subtitle-link:hover {
+  text-decoration: underline;
 }
 
 /* Hand-drawn style only: white title for contrast */

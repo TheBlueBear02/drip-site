@@ -3,6 +3,8 @@ import { SkillProvider } from './context/SkillContext';
 import { useSkillTheme } from './hooks/useSkillTheme';
 import FloatingTab from './components/ui/FloatingTab';
 import Home from './pages/Home';
+import CreateSkill from './pages/CreateSkill';
+import Library from './pages/Library';
 
 // Component that applies theme to root
 function ThemeApplier() {
@@ -17,6 +19,8 @@ function App() {
       <Router basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/create" element={<CreateSkill />} />
+          <Route path="/library" element={<Library />} />
         </Routes>
         <FloatingTab />
       </Router>

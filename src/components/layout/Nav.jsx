@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Nav.css';
 
 // Full repo path for GitHub API (owner/repo)
 const GITHUB_REPO = 'TheBlueBear02/drip-cli';
 const GITHUB_URL = `https://github.com/${GITHUB_REPO}`;
 
-function Nav() {
+function Nav({ variant }) {
   const [stars, setStars] = useState(null);
+  const isCreate = variant === 'create';
+  const isLibrary = variant === 'library';
 
   useEffect(() => {
     fetch(`https://api.github.com/repos/${GITHUB_REPO}`)
@@ -32,25 +35,38 @@ function Nav() {
     <nav className="nav">
       <div className="container">
         <div className="nav-content">
-          <a href="#" onClick={handleScrollToTop} className="nav-logo" aria-label="Scroll to top">
-            <span className="nav-logo-text">
-              <span className="brand-get">GET</span><span className="brand-drip">DRIP</span>
-            </span>
-            <span className="nav-logo-beta" aria-label="Beta">Beta</span>
-          </a>
+          {isCreate || isLibrary ? (
+            <Link to="/" className="nav-logo" aria-label="Go to home">
+              <span className="nav-logo-text">
+                <span className="brand-get">GET</span><span className="brand-drip">DRIP</span>
+              </span>
+              <span className="nav-logo-beta" aria-label="Beta">Beta</span>
+            </Link>
+          ) : (
+            <a href="#" onClick={handleScrollToTop} className="nav-logo" aria-label="Scroll to top">
+              <span className="nav-logo-text">
+                <span className="brand-get">GET</span><span className="brand-drip">DRIP</span>
+              </span>
+              <span className="nav-logo-beta" aria-label="Beta">Beta</span>
+            </a>
+          )}
           <div className="nav-links">
-            <a href="#how-it-works" onClick={(e) => handleScrollTo(e, 'how-it-works')} className="nav-link">
-              How It Works
-            </a>
-            <a href="#skills" onClick={(e) => handleScrollTo(e, 'skills')} className="nav-link">
-              Skills
-            </a>
-            <a href="#platforms" onClick={(e) => handleScrollTo(e, 'platforms')} className="nav-link">
-              Platforms
-            </a>
-            <a href="#faq" onClick={(e) => handleScrollTo(e, 'faq')} className="nav-link">
-              Q&A
-            </a>
+            {!isCreate && !isLibrary && (
+              <>
+                <a href="#how-it-works" onClick={(e) => handleScrollTo(e, 'how-it-works')} className="nav-link">
+                  How It Works
+                </a>
+                <Link to="/library" className="nav-link">
+                  Library
+                </Link>
+                <a href="#platforms" onClick={(e) => handleScrollTo(e, 'platforms')} className="nav-link">
+                  Platforms
+                </a>
+                <a href="#faq" onClick={(e) => handleScrollTo(e, 'faq')} className="nav-link">
+                  Q&A
+                </a>
+              </>
+            )}
           </div>
           <div className="nav-right">
             <a
@@ -66,9 +82,19 @@ function Nav() {
                 {stars != null ? stars.toLocaleString() : '—'}
               </span>
             </a>
-            <a href="#skills" onClick={(e) => handleScrollTo(e, 'skills')} className="nav-cta">
-              Browse Designs
-            </a>
+            {isCreate ? (
+              <Link to="/library" className="nav-cta">
+                Browse Designs
+              </Link>
+            ) : isLibrary ? (
+              <Link to="/create" className="nav-cta">
+                Create Skill
+              </Link>
+            ) : (
+              <Link to="/create" className="nav-cta">
+                Create Skill
+              </Link>
+            )}
           </div>
         </div>
       </div>

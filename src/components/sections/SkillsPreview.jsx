@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useSkillContext } from '../../context/SkillContext';
 import { skillList } from '../../skills';
 import CopyCommand from '../ui/CopyCommand';
@@ -121,6 +122,12 @@ function SkillsPreview() {
     <section id="skills" className={`skills-preview ${isPlayfulGeometric ? 'skills-preview--playful-geometric' : ''} ${isLinearModern ? 'skills-preview--linear-modern' : ''}`}>
       <div className="container">
         <h2 className="skills-preview-title">Featured Designs</h2>
+        <p className="skills-preview-subtitle">
+          Choose from library or{' '}
+          <Link to="/create" className="skills-preview-subtitle-link">
+            create your design skill in one click
+          </Link>
+        </p>
 
         {isMobile ? (
           <>
