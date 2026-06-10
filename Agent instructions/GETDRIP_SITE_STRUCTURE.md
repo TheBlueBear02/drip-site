@@ -255,7 +255,7 @@ Hero
   └── Eyebrow: "CURE THE \"DEFAULT UI\" LOOK"
   └── Headline: one line, large, accent word styled
   └── Subheadline: 1-2 sentences
-  └── "Try now:" label above CopyCommand pill (command varies by active/preview skill)
+  └── "Apply style with:" label above CopyCommand pill (`size="lg"`, scaled down via `.hero-command .copy-command-lg` in Hero.css)
   └── "100% free" at bottom of hero content
   └── Playful variant: shape colors --site-hero-shape-1..4, float animation (respects prefers-reduced-motion)
   └── Neo-Brutalism variant: halftone background, bordered hero card (4px border, hard shadow, lift on hover)

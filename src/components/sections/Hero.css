@@ -3,7 +3,7 @@
 .hero {
   position: relative;
   min-height: 720px;
-  padding: 100px 0 140px;
+  padding: 48px 0 140px;
   text-align: center;
   overflow: hidden;
   background-color: var(--site-hero-bg);
@@ -35,7 +35,7 @@
 
 /* ── Playful geometric only: shapes + card ──────────────────────────────── */
 .hero--playful-geometric {
-  padding-top: 56px;
+  padding-top: 32px;
 }
 
 .hero--playful-geometric .hero-content {
@@ -188,7 +188,7 @@
 
 /* ── Neo-Brutalism only: halftone texture + bordered card with hard shadow ── */
 .hero--neo-brutalism {
-  padding-top: 56px;
+  padding-top: 32px;
   background-image: radial-gradient(#000 1.5px, transparent 1.5px);
   background-size: 20px 20px;
   background-color: var(--site-hero-bg);
@@ -216,7 +216,7 @@
 
 /* ── Hand-drawn only: wobbly card, hard offset shadow, slight rotation ── */
 .hero--hand-drawn {
-  padding-top: 56px;
+  padding-top: 32px;
 }
 
 .hero--hand-drawn .hero-card {
@@ -306,7 +306,7 @@
   opacity: 0.9;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
   font-family: var(--site-font-body);
 }
 
@@ -315,7 +315,7 @@
   font-weight: var(--site-hero-headline-weight, 800);
   line-height: 1.1;
   min-height: 2lh;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   letter-spacing: -0.02em;
   color: var(--site-hero-text);
   font-family: var(--site-font-head);
@@ -351,7 +351,7 @@
   font-size: clamp(17px, 2.2vw, 22px);
   color: var(--site-hero-text, var(--site-text-muted));
   opacity: 0.9;
-  margin-bottom: 26px;
+  margin-bottom: 36px;
   line-height: 1.6;
   font-family: var(--site-font-body);
   max-width: 620px;
@@ -382,7 +382,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 }
 
 .hero-command {
@@ -391,18 +391,24 @@
   width: 100%;
 }
 
+.hero-command .copy-command-lg {
+  padding: 13px 20px;
+  font-size: 15px;
+  gap: 10px;
+}
+
 .hero-free {
   font-size: 15px;
   font-weight: 600;
   color: var(--site-hero-text, var(--site-text-muted));
   opacity: 0.6;
-  margin: 6px 0 0;
+  margin: 16px 0 0;
   font-family: var(--site-font-body);
   text-align: center;
 }
 
 .hero-downloads {
-  margin: 10px 0 0;
+  margin: 18px 0 0;
   font-size: 17px;
   font-family: var(--site-font-body);
   color: var(--site-hero-text, var(--site-text-muted));
@@ -470,13 +476,13 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 72px 0 100px;
+    padding: 40px 0 100px;
   }
 
   .hero--neo-brutalism,
   .hero--hand-drawn,
   .hero--playful-geometric {
-    padding-top: 48px;
+    padding-top: 28px;
   }
 
   .hero--playful-geometric .hero-card {
